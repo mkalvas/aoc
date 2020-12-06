@@ -1,4 +1,5 @@
-import { createPassport, groupLines, puzzleOne, puzzleTwo } from './code';
+import { createPassport, solutionOne, solutionTwo } from './code';
+import { groupLines } from '../lib';
 
 const INPUT = [
   'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd',
@@ -48,26 +49,6 @@ const VALID_PASSPORTS = [
 ];
 
 describe('parsing', () => {
-  it('groups lines correctly', () => {
-    expect(groupLines(INPUT)).toEqual([
-      [
-        'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd',
-        'byr:1937 iyr:2017 cid:147 hgt:183cm',
-      ],
-      [
-        'iyr:2013 ecl:amb cid:350 eyr:2023 pid:028048884',
-        'hcl:#cfa07d byr:1929',
-      ],
-      [
-        'hcl:#ae17e1 iyr:2013',
-        'eyr:2024',
-        'ecl:brn pid:760753108 byr:1931',
-        'hgt:179cm',
-      ],
-      ['hcl:#cfa07d eyr:2025 pid:166559648', 'iyr:2011 ecl:brn hgt:59in'],
-    ]);
-  });
-
   it('creates passports from grouped lines', () => {
     expect(groupLines(INPUT).map(createPassport)).toEqual([
       {
@@ -108,11 +89,15 @@ describe('parsing', () => {
   });
 });
 
-it('solves the first puzzle test case', () => {
-  expect(puzzleOne(INPUT)).toBe(2);
+describe('puzzle one', () => {
+  it('validates passports based on presence of required keys', () => {
+    expect(solutionOne(INPUT)).toBe(2);
+  });
 });
 
-it('solves the second puzzle test case', () => {
-  expect(puzzleTwo(INVALID_PASSPORTS)).toBe(0);
-  expect(puzzleTwo(VALID_PASSPORTS)).toBe(4);
+describe('puzzle two', () => {
+  it('validates passports based on presense of keys and valid values', () => {
+    expect(solutionTwo(INVALID_PASSPORTS)).toBe(0);
+    expect(solutionTwo(VALID_PASSPORTS)).toBe(4);
+  });
 });

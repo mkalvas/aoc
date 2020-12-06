@@ -1,7 +1,7 @@
 import { solutionOne, solutionTwo } from './code';
 
 const day = {
-  label: 'Multiple',
+  label: 'Declared Customs Count',
   path: `${__dirname}/input.txt`,
   solutionOne,
   solutionTwo,

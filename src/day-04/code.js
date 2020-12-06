@@ -1,4 +1,6 @@
-const validateName = (passport, key) => passport.hasOwnProperty(key);
+import { groupLines } from '../lib';
+
+const isPresent = (passport, key) => passport.hasOwnProperty(key);
 
 const validNumberRange = (min, max) => (passport, key) => {
   const number = parseInt(passport[key]);
@@ -21,30 +23,9 @@ const validHairColor = (passport, key) =>
 
 const validId = (passport, key) => passport[key].match(/^[0-9]{9}$/g) !== null;
 
-const REQUIRED_KEYS_ONE = {
-  byr: validateName,
-  iyr: validateName,
-  eyr: validateName,
-  hgt: validateName,
-  ecl: validateName,
-  pid: validateName,
-  hcl: validateName,
-};
-
-const REQUIRED_KEYS_TWO = {
-  byr: validNumberRange(1920, 2002),
-  iyr: validNumberRange(2010, 2020),
-  eyr: validNumberRange(2020, 2030),
-  hgt: validHeight,
-  hcl: validHairColor,
-  ecl: validEyeColor,
-  pid: validId,
-};
-
 export const createPassport = (lines) =>
   lines.reduce((passport, line) => {
-    const fields = line.split(' ');
-    fields.map((f) => {
+    line.split(' ').map((f) => {
       const kv = f.split(':');
       passport[kv[0]] = kv[1];
     });
@@ -53,41 +34,36 @@ export const createPassport = (lines) =>
     return passport;
   }, {});
 
-export const groupLines = (lines) =>
-  lines.reduce(
-    (groups, line) => {
-      if (line === '') return [...groups, []];
-      groups[groups.length - 1].push(line);
-      return groups;
-    },
-    [[]]
+const validateKeys = (keyValidators, passport) =>
+  Object.keys(keyValidators).reduce(
+    (isValid, k) =>
+      isValid !== false &&
+      passport.hasOwnProperty(k) &&
+      keyValidators[k](passport, k),
+    null
   );
 
-const validateKeys = (requiredKeys, passport) => {
-  const result = Object.keys(requiredKeys).reduce((isValid, k) => {
-    if (isValid === false) return false;
-    if (!passport.hasOwnProperty(k)) return false;
-
-    return requiredKeys[k](passport, k);
-  }, null);
-
-  return result;
-};
-
-const passportValidator = (requiredKeys, passport) => {
-  const keys = Object.keys(passport);
-  if (validateKeys(requiredKeys, passport)) return true;
-  return false;
-};
-
-export const puzzleOne = (input) =>
+const solution = (keyValidators) => (input) =>
   groupLines(input)
     .map(createPassport)
-    .filter((passport) => passportValidator(REQUIRED_KEYS_ONE, passport))
-    .length;
+    .filter((passport) => validateKeys(keyValidators, passport)).length;
 
-export const puzzleTwo = (input) =>
-  groupLines(input)
-    .map(createPassport)
-    .filter((passport) => passportValidator(REQUIRED_KEYS_TWO, passport))
-    .length;
+export const solutionOne = solution({
+  byr: isPresent,
+  iyr: isPresent,
+  eyr: isPresent,
+  hgt: isPresent,
+  ecl: isPresent,
+  pid: isPresent,
+  hcl: isPresent,
+});
+
+export const solutionTwo = solution({
+  byr: validNumberRange(1920, 2002),
+  iyr: validNumberRange(2010, 2020),
+  eyr: validNumberRange(2020, 2030),
+  hgt: validHeight,
+  hcl: validHairColor,
+  ecl: validEyeColor,
+  pid: validId,
+});

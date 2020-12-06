@@ -21,7 +21,7 @@ const traverse = (dx, dy) => (input, pos = 0) => {
   return traverse(dx, dy)(newInput, nextPos) + treeCount;
 };
 
-export const puzzleOne = traverse(3, 1);
+export const solutionOne = traverse(3, 1);
 
-export const puzzleTwo = (input) =>
+export const solutionTwo = (input) =>
   SLOPES.map((s) => traverse(...s)(input)).reduce((acc, cur) => acc * cur, 1);

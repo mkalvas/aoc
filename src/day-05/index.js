@@ -1,13 +1,10 @@
-import { getFileLines, solve } from '../lib';
-import { puzzleOne, puzzleTwo } from './code';
+import { solutionOne, solutionTwo } from './code';
 
-const parseInput = () => getFileLines(`${__dirname}/input.txt`);
-
-const printOutput = (solution) => {
-  console.log(`  Pass ID: ${solution}`);
-  console.log('');
+const day = {
+  label: 'Pass ID',
+  path: `${__dirname}/input.txt`,
+  solutionOne,
+  solutionTwo,
 };
-
-const day = () => solve(parseInput, [puzzleOne, puzzleTwo], printOutput);
 
 export default day;

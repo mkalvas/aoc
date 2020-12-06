@@ -1,4 +1,4 @@
-import { puzzleOne, puzzleTwo } from './code';
+import { solutionOne, solutionTwo } from './code';
 
 const INPUT = [
   '..##.......',
@@ -14,10 +14,14 @@ const INPUT = [
   '.#..#...#.#',
 ];
 
-it('solves the first puzzle test case', () => {
-  expect(puzzleOne(INPUT)).toBe(7);
+describe('puzzle one', () => {
+  it('counts the trees encountered for slope (3, 1)', () => {
+    expect(solutionOne(INPUT)).toBe(7);
+  });
 });
 
-it('solves the second puzzle test case', () => {
-  expect(puzzleTwo(INPUT)).toBe(336);
+describe('puzzle two', () => {
+  it('counts the trees encountered for each slope and multiplies them', () => {
+    expect(solutionTwo(INPUT)).toBe(336);
+  });
 });

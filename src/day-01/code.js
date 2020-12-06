@@ -1,45 +1,24 @@
-export const puzzleOne = (input) => {
-  let i;
-  let j;
-  let set;
+const TARGET_SUM = 2020;
 
-  for (let i = 0; i < input.length; i++) {
-    for (let j = 0; j < input.length; j++) {
-      if (input[i] + input[j] === 2020) {
-        set = [input[i], input[j]];
-        break;
-      }
-    }
-    if (set) break;
+const parseLinesAsNumbers = (lines) => lines.map((s) => parseInt(s));
+
+const findPair = (numbers, targetSum = TARGET_SUM) => {
+  let hashmap = new Set();
+  for (const val of numbers) {
+    const temp = targetSum - val;
+    if (hashmap.has(temp)) return temp * val;
+    hashmap.add(val);
   }
-
-  return {
-    set,
-    multiple: set.reduce((acc, cur) => acc * cur, 1),
-  };
 };
 
-export const puzzleTwo = (input) => {
-  let i;
-  let j;
-  let k;
-  let set;
-
-  for (let i = 0; i < input.length; i++) {
-    for (let j = 0; j < input.length; j++) {
-      for (let k = 0; k < input.length; k++) {
-        if (input[k] + input[i] + input[j] === 2020) {
-          set = [input[i], input[j], input[k]];
-          break;
-        }
-      }
-      if (set) break;
-    }
-    if (set) break;
+const findTriplet = (numbers) => {
+  for (let i = 0; i < numbers.length; i++) {
+    const subArray = numbers.slice(0, i);
+    const pairMultiple = findPair(subArray, TARGET_SUM - numbers[i]);
+    if (pairMultiple) return numbers[i] * pairMultiple;
   }
-
-  return {
-    set,
-    multiple: set.reduce((acc, cur) => acc * cur, 1),
-  };
 };
+
+export const solutionOne = (input) => findPair(parseLinesAsNumbers(input));
+
+export const solutionTwo = (input) => findTriplet(parseLinesAsNumbers(input));
