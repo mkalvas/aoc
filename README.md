@@ -4,9 +4,7 @@ This is a small repo for coding and testing solutions to [Advent of Code](https:
 
 ## [2020](https://adventofcode.com/2020)
 
-This year I decided to write in JS because I know it well and I wanted to try and solve the puzzles as fast as possible. I deliberately went with first gut solutions and didn't try to make things fast, elegant, or generalizable.
-
-This is not an example of good code and besides the solution code itself there's lots of random junk around printing and testing that could be cleaned up.
+This year I decided to write in JS because I know it well and I wanted to try and stick with it. I'm guessing that using a familiar language will cut down on the time it takes to solve each day and remove the frustrating gap between knowing the solution but not getting it to work right because of my ignorance of a new language. Both of those should give me a better shot at actually completing this year.
 
 ```sh
 # Install deps
