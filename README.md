@@ -10,8 +10,13 @@ This year I decided to write in JS because I know it well and I wanted to try an
 # Install deps
 npm install
 
-# Run tests in watch mode
-npm run test
+# Run build in watch mode
+npm run build:watch
+
+# Run tests
+npm run test:watch
+
+# Hack
 
 # Run all puzzles and see the solution output
 npm start
