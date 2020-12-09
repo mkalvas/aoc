@@ -27,6 +27,10 @@ Day 6
 Day 7
   Puzzle 01 - Possible Bag Colors: 302
   Puzzle 02 - Possible Bag Colors: 4165
+
+Day 8
+  Puzzle 01 - Accumulator Value: 1331
+  Puzzle 02 - Accumulator Value: 1121
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {

@@ -7,8 +7,9 @@ import day04 from './day-04';
 import day05 from './day-05';
 import day06 from './day-06';
 import day07 from './day-07';
+import day08 from './day-08';
 
-export const DAYS = [day01, day02, day03, day04, day05, day06, day07];
+export const DAYS = [day01, day02, day03, day04, day05, day06, day07, day08];
 
 export const getFileLines = (path) =>
   fs.readFileSync(path, 'utf-8').split('\n');
