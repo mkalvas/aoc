@@ -5,6 +5,7 @@
     "build": "babel src --out-dir build --copy-files",
     "build:watch": "babel src --watch --out-dir build --copy-files",
     "clean": "rm -rf build",
+    "dev": "npm run clean && npm run build:watch",
     "start": "node build/index.js",
     "test": "jest",
     "test:watch": "jest --watch"

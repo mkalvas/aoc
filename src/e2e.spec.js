@@ -31,6 +31,10 @@ Day 7
 Day 8
   Puzzle 01 - Accumulator Value: 1331
   Puzzle 02 - Accumulator Value: 1121
+
+Day 9
+  Puzzle 01 - Invalid Sequence: 57195069
+  Puzzle 02 - Invalid Sequence: 7409241
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {

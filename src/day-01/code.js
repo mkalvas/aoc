@@ -2,7 +2,7 @@ const TARGET_SUM = 2020;
 
 const parseLinesAsNumbers = (lines) => lines.map((s) => parseInt(s));
 
-const findPair = (numbers, targetSum = TARGET_SUM) => {
+export const findPair = (numbers, targetSum = TARGET_SUM) => {
   let hashmap = new Set();
   for (const val of numbers) {
     const temp = targetSum - val;
