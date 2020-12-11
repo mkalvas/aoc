@@ -43,8 +43,8 @@ describe('puzzle one', () => {
 });
 
 describe('puzzle two', () => {
-  xit('sums the smallest and largest of the sequence', () => {
-    expect(solutionOne(INPUT_1)).toEqual(35);
-    expect(solutionOne(INPUT_2)).toEqual(220);
+  it('sums the smallest and largest of the sequence', () => {
+    expect(solutionTwo(INPUT_1)).toEqual(8);
+    expect(solutionTwo(INPUT_2)).toEqual(19208);
   });
 });

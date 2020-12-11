@@ -1,7 +1,7 @@
 import { solutionOne, solutionTwo } from './code';
 
 const day = {
-  label: 'Joltage Multiple',
+  label: 'Adapter Configurations',
   path: `${__dirname}/input.txt`,
   solutionOne,
   solutionTwo,

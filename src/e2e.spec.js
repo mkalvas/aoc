@@ -35,6 +35,10 @@ Day 8
 Day 9
   Puzzle 01 - Invalid Sequence: 57195069
   Puzzle 02 - Invalid Sequence: 7409241
+
+Day 10
+  Puzzle 01 - Adapter Configurations: 2775
+  Puzzle 02 - Adapter Configurations: 518344341716992
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {

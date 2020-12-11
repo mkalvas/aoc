@@ -1,6 +1,6 @@
-const TARGET_SUM = 2020;
+import { parseInts } from '../lib';
 
-const parseLinesAsNumbers = (lines) => lines.map((s) => parseInt(s));
+const TARGET_SUM = 2020;
 
 export const findPair = (numbers, targetSum = TARGET_SUM) => {
   let hashmap = new Set();
@@ -19,6 +19,6 @@ const findTriplet = (numbers) => {
   }
 };
 
-export const solutionOne = (input) => findPair(parseLinesAsNumbers(input));
+export const solutionOne = (input) => findPair(parseInts(input));
 
-export const solutionTwo = (input) => findTriplet(parseLinesAsNumbers(input));
+export const solutionTwo = (input) => findTriplet(parseInts(input));

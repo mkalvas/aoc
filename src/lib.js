@@ -9,6 +9,7 @@ import day06 from './day-06';
 import day07 from './day-07';
 import day08 from './day-08';
 import day09 from './day-09';
+import day10 from './day-10';
 
 export const DAYS = [
   day01,
@@ -20,7 +21,11 @@ export const DAYS = [
   day07,
   day08,
   day09,
+  day10,
 ];
+
+export const parseInts = (input) => input.map((n) => parseInt(n));
+export const numericSort = (a, b) => a - b;
 
 export const getFileLines = (path) =>
   fs.readFileSync(path, 'utf-8').split('\n');
