@@ -39,6 +39,10 @@ Day 9
 Day 10
   Puzzle 01 - Adapter Configurations: 2775
   Puzzle 02 - Adapter Configurations: 518344341716992
+
+Day 11
+  Puzzle 01 - Occupied Seats: 2448
+  Puzzle 02 - Occupied Seats: 2234
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {
