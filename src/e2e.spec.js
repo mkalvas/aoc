@@ -43,6 +43,10 @@ Day 10
 Day 11
   Puzzle 01 - Occupied Seats: 2448
   Puzzle 02 - Occupied Seats: 2234
+
+Day 12
+  Puzzle 01 - Manhattan Distance: 1457
+  Puzzle 02 - Manhattan Distance: 106860
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {
