@@ -12,13 +12,15 @@ I also decided to write up my thought process and solution explanations on my bl
 # Install deps
 npm install
 
-# Run build in watch mode
-npm run build:watch
+# Clean and run build in watch mode for dev
+npm run dev
 
-# Run tests
+# Running tests
+npm run test
 npm run test:watch
 
-# Hack
+# Run build once
+npm run build
 
 # Run all puzzles and see the solution output
 npm start

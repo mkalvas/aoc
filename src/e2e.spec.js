@@ -47,6 +47,10 @@ Day 11
 Day 12
   Puzzle 01 - Manhattan Distance: 1457
   Puzzle 02 - Manhattan Distance: 106860
+
+Day 13
+  Puzzle 01 - Found Bus Time: 153
+  Puzzle 02 - Found Bus Time: 471793476184394
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {
