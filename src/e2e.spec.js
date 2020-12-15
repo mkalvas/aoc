@@ -51,6 +51,10 @@ Day 12
 Day 13
   Puzzle 01 - Found Bus Time: 153
   Puzzle 02 - Found Bus Time: 471793476184394
+
+Day 14
+  Puzzle 01 - Bitmasked Sum: 7817357407588
+  Puzzle 02 - Bitmasked Sum: 4335927555692
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {

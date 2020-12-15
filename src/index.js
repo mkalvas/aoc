@@ -1,3 +1,3 @@
-import { aoc, DAYS } from './lib';
+import { aoc } from './lib';
 
-console.log(aoc(DAYS));
+console.log(aoc());

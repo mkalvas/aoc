@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { performance } from 'perf_hooks';
 
 import day01 from './day-01';
 import day02 from './day-02';
@@ -13,6 +14,7 @@ import day10 from './day-10';
 import day11 from './day-11';
 import day12 from './day-12';
 import day13 from './day-13';
+import day14 from './day-14';
 
 export const DAYS = [
   day01,
@@ -28,6 +30,7 @@ export const DAYS = [
   day11,
   day12,
   day13,
+  day14,
 ];
 
 export const parseInts = (input) => input.map((n) => parseInt(n));
@@ -52,3 +55,22 @@ export const solve = (day, dayNumber) => `Day ${dayNumber}
 `;
 
 export const aoc = () => DAYS.map((day, i) => solve(day, i + 1)).join('\n');
+
+const perf = (callback) => {
+  const t0 = performance.now();
+  callback();
+  return (performance.now() - t0).toFixed(2).toString().padStart(6, 0) + ' ms';
+};
+
+const d2s = (d) => d.toString().padStart(2, 0);
+
+const timeDay = (day, dayNumber) => `├──────┼───────────┤
+│ ${d2s(dayNumber)}.1 │ ${perf(() => day.solutionOne(getFileLines(day.path)))} │
+│ ${d2s(dayNumber)}.2 │ ${perf(() =>
+  day.solutionTwo(getFileLines(day.path))
+)} │`;
+
+export const time = () => `┌──────┬───────────┐
+│ days │  timings  │
+${DAYS.map((day, i) => timeDay(day, i + 1)).join('\n')}
+└──────┴───────────┘`;
