@@ -59,6 +59,10 @@ Day 14
 Day 15
   Puzzle 01 - 2020th Number: 447
   Puzzle 02 - 2020th Number: 11721679
+
+Day 16
+  Puzzle 01 - Error Rate: undefined
+  Puzzle 02 - Error Rate: undefined
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {

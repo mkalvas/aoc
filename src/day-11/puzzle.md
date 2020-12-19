@@ -21,10 +21,10 @@ L.LLLLLL.L
 L.LLLLL.LL
 ```
 
-Now, you just need to model the people who will be arriving shortly. Fortunately, people are entirely predictable and always follow a simple set of rules. All decisions are based on the _number of occupied seats_ adjacent to a given seat (one of the eight positions immediately up, down, left, right, or diagonal from the seat). The following rules are applied to every seat simultaneously:
+Now, you just need to model the people who will be arriving shortly. Fortunately, people are entirely predictable and always follow a simple set of rules. All decisions are based on the **number of occupied seats** adjacent to a given seat (one of the eight positions immediately up, down, left, right, or diagonal from the seat). The following rules are applied to every seat simultaneously:
 
-- If a seat is _empty_ (`L`) and there are _no_ occupied seats adjacent to it, the seat becomes _occupied_.
-- If a seat is _occupied_ (`#`) and _four or more_ seats adjacent to it are also occupied, the seat becomes _empty_.
+- If a seat is **empty** (`L`) and there are **no** occupied seats adjacent to it, the seat becomes **occupied**.
+- If a seat is **occupied** (`#`) and **four or more** seats adjacent to it are also occupied, the seat becomes **empty**.
 - Otherwise, the seat's state does not change.
 
 Floor (`.`) never changes; seats don't move, and nobody sits on the floor.
@@ -100,17 +100,17 @@ L.#.L..#..
 #.#L#L#.##
 ```
 
-At this point, something interesting happens: the chaos stabilizes and further applications of these rules cause no seats to change state! Once people stop moving around, you count _`37`_ occupied seats.
+At this point, something interesting happens: the chaos stabilizes and further applications of these rules cause no seats to change state! Once people stop moving around, you count **`37`** occupied seats.
 
-Simulate your seating area by applying the seating rules repeatedly until no seats change state. _How many seats end up occupied?_
+Simulate your seating area by applying the seating rules repeatedly until no seats change state. **How many seats end up occupied?**
 
 Your puzzle answer was `2448`.
 
 ## Part Two
 
-As soon as people start to arrive, you realize your mistake. People don't just care about adjacent seats - they care about _the first seat they can see_ in each of those eight directions!
+As soon as people start to arrive, you realize your mistake. People don't just care about adjacent seats - they care about **the first seat they can see** in each of those eight directions!
 
-Now, instead of considering just the eight immediately adjacent seats, consider the _first seat_ in each of those eight directions. For example, the empty seat below would see _eight_ occupied seats:
+Now, instead of considering just the eight immediately adjacent seats, consider the **first seat** in each of those eight directions. For example, the empty seat below would see **eight** occupied seats:
 
 ```txt
 .......#.
@@ -124,7 +124,7 @@ Now, instead of considering just the eight immediately adjacent seats, consider 
 ...#.....
 ```
 
-The leftmost empty seat below would only see _one_ empty seat, but cannot see any of the occupied ones:
+The leftmost empty seat below would only see **one** empty seat, but cannot see any of the occupied ones:
 
 ```txt
 .............
@@ -132,7 +132,7 @@ The leftmost empty seat below would only see _one_ empty seat, but cannot see an
 .............
 ```
 
-The empty seat below would see _no_ occupied seats:
+The empty seat below would see **no** occupied seats:
 
 ```txt
 .##.##.
@@ -144,7 +144,7 @@ The empty seat below would see _no_ occupied seats:
 .##.##.
 ```
 
-Also, people seem to be more tolerant than you expected: it now takes _five or more_ visible occupied seats for an occupied seat to become empty (rather than _four or more_ from the previous rules). The other rules still apply: empty seats that see no occupied seats become occupied, seats matching no rule don't change, and floor never changes.
+Also, people seem to be more tolerant than you expected: it now takes **five or more** visible occupied seats for an occupied seat to become empty (rather than **four or more** from the previous rules). The other rules still apply: empty seats that see no occupied seats become occupied, seats matching no rule don't change, and floor never changes.
 
 Given the same starting layout as above, these new rules cause the seating area to shift around as follows:
 
@@ -239,8 +239,8 @@ LLL###LLL#
 #.L#LL#.L#
 ```
 
-Again, at this point, people stop shifting around and the seating area reaches equilibrium. Once this occurs, you count _`26`_ occupied seats.
+Again, at this point, people stop shifting around and the seating area reaches equilibrium. Once this occurs, you count **`26`** occupied seats.
 
-Given the new visibility method and the rule change for occupied seats becoming empty, once equilibrium is reached, _how many seats end up occupied?_
+Given the new visibility method and the rule change for occupied seats becoming empty, once equilibrium is reached, **how many seats end up occupied?**
 
 Your puzzle answer was `2234`.

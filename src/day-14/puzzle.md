@@ -49,21 +49,21 @@ result: 000000000000000000000000000001000000  (decimal 64)
 
 To initialize your ferry's docking program, you need the sum of all values left in memory after the initialization program completes. (The entire 36-bit address space begins initialized to the value `0` at every address.) In the above example, only two values in memory are not zero - `101` (at address `7`) and `64` (at address `8`) - producing a sum of `165`.
 
-Execute the initialization program. _What is the sum of all values left in memory after it completes?_
+Execute the initialization program. **What is the sum of all values left in memory after it completes?**
 
 Your puzzle answer was `7817357407588`.
 
 ## Part Two
 
-For some reason, the sea port's computer system still can't communicate with your ferry's docking program. It must be using _version 2_ of the decoder chip!
+For some reason, the sea port's computer system still can't communicate with your ferry's docking program. It must be using **version 2** of the decoder chip!
 
-A version 2 decoder chip doesn't modify the values being written at all. Instead, it acts as a memory address decoder. Immediately before a value is written to memory, each bit in the bitmask modifies the corresponding bit of the destination _memory address_ in the following way:
+A version 2 decoder chip doesn't modify the values being written at all. Instead, it acts as a memory address decoder. Immediately before a value is written to memory, each bit in the bitmask modifies the corresponding bit of the destination **memory address** in the following way:
 
-- If the bitmask bit is `0`, the corresponding memory address bit is _unchanged_.
-- If the bitmask bit is `1`, the corresponding memory address bit is _overwritten_ with 1.
-- If the bitmask bit is `X`, the corresponding memory address bit is _floating_.
+- If the bitmask bit is `0`, the corresponding memory address bit is **unchanged**.
+- If the bitmask bit is `1`, the corresponding memory address bit is **overwritten** with 1.
+- If the bitmask bit is `X`, the corresponding memory address bit is **floating**.
 
-A _floating_ bit is not connected to anything and instead fluctuates unpredictably. In practice, this means the floating bits will take on _all possible values_, potentially causing many memory addresses to be written all at once!
+A **floating** bit is not connected to anything and instead fluctuates unpredictably. In practice, this means the floating bits will take on **all possible values**, potentially causing many memory addresses to be written all at once!
 
 For example, consider the following program:
 
@@ -82,7 +82,7 @@ mask:    000000000000000000000000000000X1001X
 result:  000000000000000000000000000000X1101X
 ```
 
-After applying the mask, four bits are overwritten, three of which are different, and two of which are _floating_. Floating bits take on every possible combination of values; with two floating bits, four actual memory addresses are written:
+After applying the mask, four bits are overwritten, three of which are different, and two of which are **floating**. Floating bits take on every possible combination of values; with two floating bits, four actual memory addresses are written:
 
 ```txt
 000000000000000000000000000000011010  (decimal 26)
@@ -91,12 +91,12 @@ After applying the mask, four bits are overwritten, three of which are different
 000000000000000000000000000000111011  (decimal 59)
 ```
 
-Next, the program is about to write to memory address _26_ with a different bitmask:
+Next, the program is about to write to memory address **26** with a different bitmask:
 
 address: 000000000000000000000000000000011010  (decimal 26)
 mask:    00000000000000000000000000000000X0XX
 result:  00000000000000000000000000000001X0XX
-This results in an address with three floating bits, causing writes to _eight_ memory addresses:
+This results in an address with three floating bits, causing writes to **eight** memory addresses:
 
 ```txt
 000000000000000000000000000000010000  (decimal 16)
@@ -109,8 +109,8 @@ This results in an address with three floating bits, causing writes to _eight_ m
 000000000000000000000000000000011011  (decimal 27)
 ```
 
-The entire 36-bit address space still begins initialized to the value 0 at every address, and you still need the sum of all values left in memory at the end of the program. In this example, the sum is _`208`_.
+The entire 36-bit address space still begins initialized to the value 0 at every address, and you still need the sum of all values left in memory at the end of the program. In this example, the sum is **`208`**.
 
-Execute the initialization program using an emulator for a version 2 decoder chip. _What is the sum of all values left in memory after it completes?_
+Execute the initialization program using an emulator for a version 2 decoder chip. **What is the sum of all values left in memory after it completes?**
 
 Your puzzle answer was `4335927555692`.
