@@ -24,13 +24,13 @@ const INPUT_2 = [
 
 describe('puzzle one', () => {
   it('counts the colors that can contain a shiny gold bag', () => {
-    expect(solutionOne(INPUT)).toEqual(4);
+    expect(solutionOne(INPUT)).toBe(4);
   });
 });
 
 describe('puzzle two', () => {
   it('counts the bags the shiny gold bag contains', () => {
-    expect(solutionTwo(INPUT)).toEqual(32);
-    expect(solutionTwo(INPUT_2)).toEqual(126);
+    expect(solutionTwo(INPUT)).toBe(32);
+    expect(solutionTwo(INPUT_2)).toBe(126);
   });
 });

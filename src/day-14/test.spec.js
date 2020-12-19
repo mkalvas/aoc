@@ -16,12 +16,12 @@ const INPUT_2 = [
 
 describe('puzzle one', () => {
   it('masks and sums the memory addresses', () => {
-    expect(solutionOne(INPUT_1)).toEqual('165');
+    expect(solutionOne(INPUT_1)).toBe('165');
   });
 });
 
 describe('puzzle two', () => {
   it('masks and sums the memory addresses', () => {
-    expect(solutionTwo(INPUT_2)).toEqual('208');
+    expect(solutionTwo(INPUT_2)).toBe('208');
   });
 });

@@ -44,14 +44,14 @@ LLL###LLL#
 
 describe('puzzle one', () => {
   it('counts the occupied seats at steady state', () => {
-    expect(solutionOne(INPUT)).toEqual(37);
+    expect(solutionOne(INPUT)).toBe(37);
     expect(printMap(runGame(INPUT, GAME_CONFIG_ONE))).toBe(ENDING_SNAPSHOT_1);
   });
 });
 
 describe('puzzle two', () => {
   it('counts the occupied seats at steady state', () => {
-    expect(solutionTwo(INPUT)).toEqual(26);
+    expect(solutionTwo(INPUT)).toBe(26);
     expect(printMap(runGame(INPUT, GAME_CONFIG_TWO))).toBe(ENDING_SNAPSHOT_2);
   });
 });

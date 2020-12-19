@@ -26,12 +26,12 @@ const INPUT = [
 
 describe('puzzle one', () => {
   it('returns the invalid sequence number', () => {
-    expect(solutionOne(INPUT, TEST_BUFFER_SIZE)).toEqual(127);
+    expect(solutionOne(INPUT, TEST_BUFFER_SIZE)).toBe(127);
   });
 });
 
 describe('puzzle two', () => {
   it('sums the smallest and largest of the sequence', () => {
-    expect(solutionTwo(INPUT, TEST_BUFFER_SIZE)).toEqual(62);
+    expect(solutionTwo(INPUT, TEST_BUFFER_SIZE)).toBe(62);
   });
 });

@@ -37,14 +37,14 @@ const INPUT_2 = [
 
 describe('puzzle one', () => {
   it('returns the multiple of the count of 1 and 3 jolt adapters', () => {
-    expect(solutionOne(INPUT_1)).toEqual(35);
-    expect(solutionOne(INPUT_2)).toEqual(220);
+    expect(solutionOne(INPUT_1)).toBe(35);
+    expect(solutionOne(INPUT_2)).toBe(220);
   });
 });
 
 describe('puzzle two', () => {
   it('sums the smallest and largest of the sequence', () => {
-    expect(solutionTwo(INPUT_1)).toEqual(8);
-    expect(solutionTwo(INPUT_2)).toEqual(19208);
+    expect(solutionTwo(INPUT_1)).toBe(8);
+    expect(solutionTwo(INPUT_2)).toBe(19208);
   });
 });

@@ -14,12 +14,12 @@ const INPUT = [
 
 describe('puzzle one', () => {
   it('returns the value of the acc when we detect a loop', () => {
-    expect(solutionOne(INPUT)).toEqual(5);
+    expect(solutionOne(INPUT)).toBe(5);
   });
 });
 
 describe('puzzle two', () => {
   it('fixes the right instruction and returns the acc', () => {
-    expect(solutionTwo(INPUT)).toEqual(8);
+    expect(solutionTwo(INPUT)).toBe(8);
   });
 });

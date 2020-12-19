@@ -20,12 +20,12 @@ const INPUT = [
 
 describe('puzzle one', () => {
   it('counts if anyone in the group has declared the item', () => {
-    expect(solutionOne(INPUT)).toEqual(11);
+    expect(solutionOne(INPUT)).toBe(11);
   });
 });
 
 describe('puzzle two', () => {
   it('counts if everyone in the group has declared the item', () => {
-    expect(solutionTwo(INPUT)).toEqual(6);
+    expect(solutionTwo(INPUT)).toBe(6);
   });
 });
