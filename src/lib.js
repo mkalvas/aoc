@@ -17,6 +17,7 @@ import day13 from './day-13';
 import day14 from './day-14';
 import day15 from './day-15';
 import day16 from './day-16';
+import day17 from './day-17';
 
 export const DAYS = [
   day01,
@@ -35,8 +36,10 @@ export const DAYS = [
   day14,
   day15,
   day16,
+  day17,
 ];
 
+export const sum = (arr) => arr.reduce((s, n) => s + n, 0);
 export const parseInts = (input) => input.map((n) => parseInt(n));
 export const numericSort = (a, b) => a - b;
 

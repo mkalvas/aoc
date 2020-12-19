@@ -61,8 +61,12 @@ Day 15
   Puzzle 02 - 2020th Number: 11721679
 
 Day 16
-  Puzzle 01 - Error Rate: undefined
-  Puzzle 02 - Error Rate: undefined
+  Puzzle 01 - Error Rate: 27850
+  Puzzle 02 - Error Rate: 491924517533
+  
+Day 17
+  Puzzle 01 - Active Cubes: undefined
+  Puzzle 02 - Active Cubes: undefined
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {
