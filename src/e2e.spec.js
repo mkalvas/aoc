@@ -55,6 +55,10 @@ Day 13
 Day 14
   Puzzle 01 - Bitmasked Sum: 7817357407588
   Puzzle 02 - Bitmasked Sum: 4335927555692
+
+Day 15
+  Puzzle 01 - 2020th Number: 447
+  Puzzle 02 - 2020th Number: 11721679
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {

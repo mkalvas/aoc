@@ -7,21 +7,21 @@ const mask = (bitmask, val) => {
   return val & BigInt(`0b${bitmask.replace(/X/g, '1')}`);
 };
 
-const convertMask = (bitmask) => {
-  let masks = [];
-  for (const bit of bitmask.split('')) {
-    switch (bit) {
-      case '0':
-        masks = masks.map((m) => m + 'X');
-      case '1':
-        masks = masks.map((m) => m + '1');
-      case 'X':
-      default:
-        masks = [...masks.map((m) => m + '0'), ...masks.map((m) => m + '1')];
-    }
-  }
-  return masks;
-};
+const convertMask = (bitmask) =>
+  bitmask.split('').reduce(
+    (masks, bit) => {
+      switch (bit) {
+        case '0':
+          return masks.map((m) => m + 'X');
+        case '1':
+          return masks.map((m) => m + '1');
+        case 'X':
+        default:
+          return [...masks.map((m) => m + '0'), ...masks.map((m) => m + '1')];
+      }
+    },
+    ['']
+  );
 
 const run = (write, input) => {
   let mem = {};

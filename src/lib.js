@@ -15,6 +15,7 @@ import day11 from './day-11';
 import day12 from './day-12';
 import day13 from './day-13';
 import day14 from './day-14';
+import day15 from './day-15';
 
 export const DAYS = [
   day01,
@@ -31,6 +32,7 @@ export const DAYS = [
   day12,
   day13,
   day14,
+  day15,
 ];
 
 export const parseInts = (input) => input.map((n) => parseInt(n));
