@@ -1,7 +1,7 @@
 import { solutionOne, solutionTwo } from './code';
 
 const day = {
-  label: '',
+  label: 'Active Cubes',
   path: `${__dirname}/input.txt`,
   solutionOne,
   solutionTwo,

@@ -63,10 +63,10 @@ Day 15
 Day 16
   Puzzle 01 - Error Rate: 27850
   Puzzle 02 - Error Rate: 491924517533
-  
+
 Day 17
-  Puzzle 01 - Active Cubes: undefined
-  Puzzle 02 - Active Cubes: undefined
+  Puzzle 01 - Active Cubes: 223
+  Puzzle 02 - Active Cubes: 1884
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {

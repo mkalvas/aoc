@@ -1,15 +1,15 @@
 import { solutionOne, solutionTwo } from './code';
 
-const INPUT = [];
+const INPUT = ['.#.', '..#', '###'];
 
 describe('puzzle one', () => {
-  xit('', () => {
-    expect(solutionOne(INPUT)).toEqual(undefined);
+  it('counts the active cubes', () => {
+    expect(solutionOne(INPUT)).toBe(112);
   });
 });
 
 describe('puzzle two', () => {
-  xit('', () => {
-    expect(solutionTwo(INPUT)).toEqual(undefined);
+  it('counts the active hypercubes', () => {
+    expect(solutionTwo(INPUT)).toBe(848);
   });
 });
