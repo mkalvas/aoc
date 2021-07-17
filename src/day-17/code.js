@@ -54,10 +54,12 @@ const translate = (point, offset) => {
 };
 
 const solution = (parseInput, genOffsets) => (input) => {
+  let activePoints = parseInput(input);
+
   const getNeighbors = (point) =>
     genOffsets().map((offset) => translate(point, offset));
 
-  const getPointsToCheck = (activePoints) => {
+  const getPointsToCheck = () => {
     let pointsToCheck = new Set();
     for (const point of activePoints) {
       pointsToCheck.add(point);
@@ -66,32 +68,32 @@ const solution = (parseInput, genOffsets) => (input) => {
     return pointsToCheck;
   };
 
-  const countActiveNeighbors = (activePoints, point) =>
+  const countActiveNeighbors = (point) =>
     getNeighbors(point).reduce(
       (count, neighbor) => (activePoints.has(neighbor) ? count + 1 : count),
       0
     );
 
-  const evolve = (activePoints, pointsToCheck) => {
+  const evolve = (pointsToCheck) => {
     let newActivePoints = new Set();
     for (const point of pointsToCheck) {
       const isActive = activePoints.has(point);
-      const count = countActiveNeighbors(activePoints, point);
+      const count = countActiveNeighbors(point);
       if (isActive && (count === 2 || count === 3)) newActivePoints.add(point);
       if (!isActive && count === 3) newActivePoints.add(point);
     }
     return newActivePoints;
   };
 
-  const cycleState = (activePoints) => {
+  const cycleState = () => {
     const pointsToCheck = getPointsToCheck(activePoints);
-    return evolve(activePoints, pointsToCheck);
+    return evolve(pointsToCheck);
   };
 
-  let activePoints = parseInput(input);
   for (let cycle = 0; cycle < 6; cycle++) {
-    activePoints = cycleState(activePoints, generate3dOffsets);
+    activePoints = cycleState(activePoints);
   }
+
   return Array.from(activePoints).length;
 };
 

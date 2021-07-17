@@ -18,6 +18,7 @@ import day14 from './day-14';
 import day15 from './day-15';
 import day16 from './day-16';
 import day17 from './day-17';
+import day18 from './day-18';
 
 export const DAYS = [
   day01,
@@ -37,6 +38,7 @@ export const DAYS = [
   day15,
   day16,
   day17,
+  day18,
 ];
 
 export const sum = (arr) => arr.reduce((s, n) => s + n, 0);

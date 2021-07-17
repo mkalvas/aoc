@@ -67,6 +67,10 @@ Day 16
 Day 17
   Puzzle 01 - Active Cubes: 223
   Puzzle 02 - Active Cubes: 1884
+
+Day 18
+  Puzzle 01 - Sum of Expressions: 15285807527593
+  Puzzle 02 - Sum of Expressions: 461295257566346
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {
