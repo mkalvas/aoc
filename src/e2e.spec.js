@@ -71,6 +71,10 @@ Day 17
 Day 18
   Puzzle 01 - Sum of Expressions: 15285807527593
   Puzzle 02 - Sum of Expressions: 461295257566346
+
+Day 19
+  Puzzle 01 - Valid Messages: 233
+  Puzzle 02 - Valid Messages: 396
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {
