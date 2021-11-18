@@ -1,4 +1,4 @@
-import { numericSort, parseInts } from '../lib';
+import { numericSort, parseInts } from '../../lib';
 
 export const parseInput = (input) => {
   const adapters = parseInts(input).sort(numericSort);

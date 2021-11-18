@@ -1,10 +1,10 @@
 import { solutionOne, solutionTwo } from './code';
 
-const INPUT = [];
+const INPUT = ['5764801', '17807724'];
 
 describe('puzzle one', () => {
-  xit('', () => {
-    expect(solutionOne(INPUT)).toEqual(undefined);
+  it('cracks the encryption key', () => {
+    expect(solutionOne(INPUT)).toEqual(14897079);
   });
 });
 

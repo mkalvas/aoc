@@ -1,4 +1,4 @@
-import { groupLines } from '../lib';
+import { groupLines } from '../../lib';
 
 const countIfAny = (group) => new Set(group.join('').split('')).size;
 

@@ -1,4 +1,4 @@
-import { parseInts } from '../lib';
+import { parseInts } from '../../lib';
 
 const TARGET_SUM = 2020;
 

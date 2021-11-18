@@ -1,4 +1,4 @@
-import { groupLines, parseInts, sum } from '../lib';
+import { groupLines, parseInts, sum } from '../../lib';
 
 const parseTicket = (ticketLine) => parseInts(ticketLine.split(','));
 

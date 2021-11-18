@@ -1,4 +1,4 @@
-import { sum } from '../lib';
+import { sum } from '../../lib';
 
 const tokenize = (string) =>
   string

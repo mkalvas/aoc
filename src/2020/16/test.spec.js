@@ -1,5 +1,5 @@
-import { solutionOne, solutionTwo, getFieldMapping } from './code';
-import { getFileLines } from '../lib';
+import { solutionOne, solutionTwo } from './code';
+import { getFileLines } from '../../lib';
 
 const INPUT_1 = [
   'class: 1-3 or 5-7',

@@ -1,5 +1,5 @@
 import { createPassport, solutionOne, solutionTwo } from './code';
-import { groupLines } from '../lib';
+import { groupLines } from '../../lib';
 
 const INPUT = [
   'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd',

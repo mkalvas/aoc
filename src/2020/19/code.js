@@ -1,4 +1,4 @@
-import { sum } from '../lib';
+import { sum } from '../../lib';
 
 // Attempt 1: Missing something, the set is right but there's a join/flat needed
 // somewhere in order to get it right that I couldn't figure out. This would be

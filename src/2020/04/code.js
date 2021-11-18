@@ -1,4 +1,4 @@
-import { groupLines } from '../lib';
+import { groupLines } from '../../lib';
 
 const isPresent = (passport, key) => passport.hasOwnProperty(key);
 

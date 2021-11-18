@@ -1,5 +1,5 @@
-import { findPair } from '../day-01';
-import { numericSort, parseInts } from '../lib';
+import { findPair } from '../01';
+import { numericSort, parseInts } from '../../lib';
 
 const findInvalidNumber = (numbers, bufferSize) => {
   for (let i = bufferSize; i < numbers.length; i++) {

@@ -75,6 +75,10 @@ Day 18
 Day 19
   Puzzle 01 - Valid Messages: 233
   Puzzle 02 - Valid Messages: 396
+
+Day 20
+  Puzzle 01 - Jigsaw Answer: 5966506063747
+  Puzzle 02 - Jigsaw Answer: 1714
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {

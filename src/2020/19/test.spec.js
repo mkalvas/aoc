@@ -72,7 +72,7 @@ describe('puzzle one', () => {
 });
 
 describe('puzzle two', () => {
-  it('', () => {
+  it('counts the valid messages', () => {
     expect(solutionTwo(INPUT_TWO)).toEqual(12);
   });
 });

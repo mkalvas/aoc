@@ -1,4 +1,4 @@
-import { numericSort } from '../lib';
+import { numericSort } from '../../lib';
 
 const lineToBin = (text) => text.replace(/[BR]/g, '1').replace(/[FL]/g, '0');
 
