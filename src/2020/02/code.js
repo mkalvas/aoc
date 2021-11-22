@@ -17,17 +17,13 @@ const createPasswordRecord = (line) => {
 export const validatorOne = ({ password, policy }) => {
   const regex = new RegExp(policy.pattern, 'g');
   const patternCount = (password.match(regex) || []).length;
-
-  if (patternCount >= policy.min && patternCount <= policy.max) return true;
-  return false;
+  return patternCount >= policy.min && patternCount <= policy.max;
 };
 
 export const validatorTwo = ({ password, policy }) => {
   const matchOne = password.charAt(policy.min - 1) === policy.pattern;
   const matchTwo = password.charAt(policy.max - 1) === policy.pattern;
-
-  if ((matchOne && !matchTwo) || (!matchOne && matchTwo)) return true;
-  return false;
+  return (matchOne && !matchTwo) || (!matchOne && matchTwo);
 };
 
 const solution = (validator) => (input) =>

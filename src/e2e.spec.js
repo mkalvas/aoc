@@ -79,6 +79,14 @@ Day 19
 Day 20
   Puzzle 01 - Jigsaw Answer: 5966506063747
   Puzzle 02 - Jigsaw Answer: 1714
+
+Day 21
+  Puzzle 01 - Allergen Ingredients: undefined
+  Puzzle 02 - Allergen Ingredients: undefined
+
+Day 22
+  Puzzle 01 - Combat Score: 35005
+  Puzzle 02 - Combat Score: 32751
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {

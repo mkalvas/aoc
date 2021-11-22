@@ -1,7 +1,7 @@
 import { solutionOne, solutionTwo } from './code';
 
 const day = {
-  label: '',
+  label: 'Combat Score',
   path: `${__dirname}/input.txt`,
   solutionOne,
   solutionTwo,
