@@ -4,6 +4,13 @@ import days2020 from './2020';
 
 const DAYS = [...days2020];
 
+// Set functions
+export const copy = (a) => new Set([...a]);
+export const union = (a, b) => new Set([...a, ...b]);
+export const intersect = (a, b) => new Set([...a].filter((x) => b.has(x)));
+export const difference = (a, b) => new Set([...a].filter((x) => !b.has(x)));
+
+// Array functions
 export const sum = (arr) => arr.reduce((s, n) => s + n, 0);
 export const parseInts = (input) => input.map((n) => parseInt(n));
 export const numericSort = (a, b) => a - b;

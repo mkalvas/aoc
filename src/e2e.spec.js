@@ -81,12 +81,16 @@ Day 20
   Puzzle 02 - Jigsaw Answer: 1714
 
 Day 21
-  Puzzle 01 - Allergen Ingredients: undefined
-  Puzzle 02 - Allergen Ingredients: undefined
+  Puzzle 01 - Allergen Ingredients: 2573
+  Puzzle 02 - Allergen Ingredients: bjpkhx,nsnqf,snhph,zmfqpn,qrbnjtj,dbhfd,thn,sthnsg
 
 Day 22
   Puzzle 01 - Combat Score: 35005
   Puzzle 02 - Combat Score: 32751
+
+Day 23
+  Puzzle 01 - Cup Labels: undefined
+  Puzzle 02 - Cup Labels: undefined
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {

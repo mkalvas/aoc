@@ -1,10 +1,10 @@
 import { solutionOne, solutionTwo } from './code';
 
-const INPUT = [];
+const INPUT = ['389125467'];
 
 describe('puzzle one', () => {
-  xit('', () => {
-    expect(solutionOne(INPUT)).toEqual(undefined);
+  it('Produces the labels on the cups', () => {
+    expect(solutionOne(INPUT)).toEqual('67384529');
   });
 });
 

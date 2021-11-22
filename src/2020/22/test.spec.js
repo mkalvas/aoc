@@ -34,8 +34,11 @@ describe('puzzle one', () => {
 });
 
 describe('puzzle two', () => {
+  it('Halts with a known infinite case', () => {
+    expect(solutionTwo(INPUT_RECURSIVE)).toEqual(105);
+  });
+
   it('Calculates the recursive combat score', () => {
     expect(solutionTwo(INPUT)).toEqual(291);
-    expect(solutionTwo(INPUT_RECURSIVE)).toEqual(105);
   });
 });
