@@ -9,7 +9,8 @@
     "start": "node build/index.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "time": "node build/timings.js"
+    "time": "node build/timings.js",
+    "cloc": "grep -Rcv '^s*$' --include='code.js' ./src"
   },
   "dependencies": {},
   "devDependencies": {
