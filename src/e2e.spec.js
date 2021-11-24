@@ -89,8 +89,16 @@ Day 22
   Puzzle 02 - Combat Score: 32751
 
 Day 23
-  Puzzle 01 - Cup Labels: undefined
+  Puzzle 01 - Cup Labels: 46978532
   Puzzle 02 - Cup Labels: undefined
+
+Day 24
+  Puzzle 01 - X: undefined
+  Puzzle 02 - X: undefined
+
+Day 25
+  Puzzle 01 - Encrypion Key: 3217885
+  Puzzle 02 - Encrypion Key: undefined
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {

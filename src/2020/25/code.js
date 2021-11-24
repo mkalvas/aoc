@@ -2,13 +2,28 @@ import { parseInts } from '../../lib';
 
 const DIVISOR = 20201227;
 
-const crack = (a, b) => {
-  for (let i = 0; i < 100000000; i++) {
-    if (Math.pow(7, i, DIVISOR) === a) return Math.pow(b, i, DIVISOR);
+const crackLoopSize = (cardPubKey) => {
+  let loopSize = 0;
+  let encKey = 1;
+  while (encKey !== cardPubKey) {
+    encKey = (encKey * 7) % DIVISOR;
+    loopSize++;
   }
+  return loopSize;
 };
 
-const solution = (a, b) => crack(a, b);
+const transform = (number, loopSize) => {
+  let result = 1;
+  for (let i = 0; i < loopSize; i++) {
+    result = (result * number) % DIVISOR;
+  }
+  return result;
+};
 
-export const solutionOne = (input) => solution(...parseInts(input));
-export const solutionTwo = (input) => solution(...parseInts(input).reverse());
+export const solutionOne = (input) => {
+  const [cardPubKey, doorPubKey] = parseInts(input);
+  const loopSize = crackLoopSize(cardPubKey);
+  return transform(doorPubKey, loopSize);
+};
+
+export const solutionTwo = () => {};

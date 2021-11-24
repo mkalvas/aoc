@@ -1,15 +1,15 @@
 import { solutionOne, solutionTwo } from './code';
 
-const INPUT = ['5764801', '17807724'];
+const INPUT = ['17807724', '5764801'];
 
 describe('puzzle one', () => {
-  it('cracks the encryption key', () => {
+  it('Cracks the encryption key', () => {
     expect(solutionOne(INPUT)).toEqual(14897079);
   });
 });
 
 describe('puzzle two', () => {
-  xit('', () => {
+  it('Does nothing, Merry Christmas!', () => {
     expect(solutionTwo(INPUT)).toEqual(undefined);
   });
 });
