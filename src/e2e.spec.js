@@ -90,15 +90,15 @@ Day 22
 
 Day 23
   Puzzle 01 - Cup Labels: 46978532
-  Puzzle 02 - Cup Labels: undefined
+  Puzzle 02 - Cup Labels: 163035127721
 
 Day 24
-  Puzzle 01 - X: undefined
-  Puzzle 02 - X: undefined
+  Puzzle 01 - Black Tiles: 232
+  Puzzle 02 - Black Tiles: 3519
 
 Day 25
-  Puzzle 01 - Encrypion Key: 3217885
-  Puzzle 02 - Encrypion Key: undefined
+  Puzzle 01 - Encryption Key: 3217885
+  Puzzle 02 - Encryption Key: undefined
 `;
 
 describe('e2e pinnning test for puzzle solutions', () => {

@@ -12,7 +12,7 @@ export const difference = (a, b) => new Set([...a].filter((x) => !b.has(x)));
 
 // Array functions
 export const sum = (arr) => arr.reduce((s, n) => s + n, 0);
-export const parseInts = (input) => input.map((n) => parseInt(n));
+export const parseInts = (input) => input.map(Number);
 export const numericSort = (a, b) => a - b;
 export const arrayEquals = (a, b) =>
   Array.isArray(a) &&
@@ -20,8 +20,12 @@ export const arrayEquals = (a, b) =>
   a.length === b.length &&
   a.every((v, i) => v === b[i]);
 
-export const getFileLines = (path) =>
-  fs.readFileSync(path, 'utf-8').split('\n');
+export const getFileLines = (path) => {
+  let lines = fs.readFileSync(path, 'utf-8').split('\n');
+  return lines[lines.length - 1] === ''
+    ? lines.slice(0, lines.length - 1)
+    : lines;
+};
 
 export const groupLines = (lines) =>
   lines.reduce(

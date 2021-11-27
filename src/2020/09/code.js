@@ -1,5 +1,5 @@
 import { findPair } from '../01';
-import { numericSort, parseInts } from '../../lib';
+import { numericSort, parseInts, sum } from '../../lib';
 
 const findInvalidNumber = (numbers, bufferSize) => {
   for (let i = bufferSize; i < numbers.length; i++) {
@@ -9,16 +9,16 @@ const findInvalidNumber = (numbers, bufferSize) => {
 };
 
 const findSequence = (numbers, targetSum) => {
-  let sum = 0;
+  let currentSum = 0;
   let start = 0;
   let end = 0;
   let sequence = [];
 
-  while (sum !== targetSum) {
+  while (currentSum !== targetSum) {
     sequence = numbers.slice(start, end);
-    sum = sequence.reduce((sum, n) => sum + n, 0);
-    if (sum < targetSum) end++;
-    if (sum > targetSum) start++;
+    currentSum = sum(sequence);
+    if (currentSum < targetSum) end++;
+    if (currentSum > targetSum) start++;
   }
 
   return sequence;

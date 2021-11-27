@@ -10,7 +10,7 @@ const initCups = (cupValues, cupCount) => {
 
   cups.forEach((c, i) => (c.n = cups[(i + 1) % cups.length]));
   let map = new Map(cups.map((c) => [c.v, c]));
-  return [cups, map];
+  return [cups[0], map];
 };
 
 const move = (head, map) => {
@@ -20,10 +20,9 @@ const move = (head, map) => {
 
   let val = head.v - 1;
   let insertHead = map.get(val);
-
   while (picks.includes(val) || !insertHead) {
-    if (val <= 0) val += map.size + 1;
     val--;
+    if (val <= 0) val += map.size + 1;
     insertHead = map.get(val);
   }
 
@@ -34,8 +33,7 @@ const move = (head, map) => {
 };
 
 const solution = (input, loops, cupCount) => {
-  let [cups, map] = initCups(parseInts(input[0].split('')), cupCount);
-  let head = cups[0];
+  let [head, map] = initCups(parseInts(input[0].split('')), cupCount);
   for (let i = 0; i < loops; i++) {
     [head, map] = move(head, map);
   }

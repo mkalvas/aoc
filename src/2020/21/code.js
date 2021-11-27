@@ -58,12 +58,12 @@ const deduceIngredients = (fwa) => {
 };
 
 export const solutionOne = (input) => {
-  const { good, counter } = findBadFoods(input.slice(0, -1));
+  const { good, counter } = findBadFoods(input);
   return sum([...good].map((f) => counter.get(f)));
 };
 
 export const solutionTwo = (input) => {
-  const { fwa } = findBadFoods(input.slice(0, -1));
+  const { fwa } = findBadFoods(input);
   const ingredients = deduceIngredients(fwa);
   return Object.keys(ingredients)
     .sort()

@@ -1,4 +1,4 @@
-import { groupLines } from '../../lib';
+import { groupLines, sum } from '../../lib';
 
 const countIfAny = (group) => new Set(group.join('').split('')).size;
 
@@ -10,9 +10,7 @@ const countIfEvery = (group) =>
   }, undefined).size;
 
 export const solution = (countingScheme) => (input) =>
-  groupLines(input)
-    .map((group) => countingScheme(group))
-    .reduce((sum, cur) => sum + cur, 0);
+  sum(groupLines(input).map((group) => countingScheme(group)));
 
 export const solutionOne = solution(countIfAny);
 export const solutionTwo = solution(countIfEvery);

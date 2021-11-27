@@ -1,4 +1,4 @@
-import { numericSort, parseInts } from '../../lib';
+import { numericSort, parseInts, sum } from '../../lib';
 
 export const parseInput = (input) => {
   const adapters = parseInts(input).sort(numericSort);
@@ -19,9 +19,7 @@ const countPaths = (adapters) =>
     if (i === adapters.length - 1) return { [adapter]: 1 };
     return {
       ...paths,
-      [adapter]: [1, 2, 3]
-        .map((delta) => paths[adapter + delta] ?? 0)
-        .reduce((sum, n) => sum + n),
+      [adapter]: sum([1, 2, 3].map((delta) => paths[adapter + delta] ?? 0)),
     };
   }, {});
 

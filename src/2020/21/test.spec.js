@@ -5,7 +5,6 @@ const INPUT = [
   'trh fvjkl sbzzf mxmxvkd (contains dairy)',
   'sqjhc fvjkl (contains soy)',
   'sqjhc mxmxvkd sbzzf (contains fish)',
-  '',
 ];
 
 describe('puzzle one', () => {
