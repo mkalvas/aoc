@@ -1,14 +1,14 @@
 const parseInput = (input) => input[0].split(',').map((i) => Number(i));
 
 const getNthNumber = (numbers, limit) => {
-  let indices = new Map(numbers.map((value, i) => [value, i + 1]));
+  let indices = new Uint32Array(limit);
+  numbers.forEach((value, i) => (indices[value] = i + 1));
   let last = numbers[numbers.length - 1];
-  let bucket = last;
 
   for (let i = numbers.length; i < limit; i++) {
-    last = indices.has(last) ? i - indices.get(last) : 0;
-    indices.set(bucket, i);
-    bucket = last;
+    const val = indices[last];
+    indices[last] = i;
+    last = val ? i - val : 0;
   }
 
   return last;

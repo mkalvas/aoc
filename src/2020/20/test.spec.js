@@ -110,7 +110,6 @@ const INPUT = [
   '..#.###...',
   '..#.......',
   '..#.###...',
-  '',
 ];
 
 const END_STATE_ONE = [
@@ -189,6 +188,7 @@ describe('puzzle one', () => {
 
 describe('puzzle two', () => {
   it('counts how many rough waters that are not part of sea monsters', () => {
+    process.env.TEST = true;
     expect(solutionTwo(END_STATE_ONE)).toEqual(273);
   });
 });

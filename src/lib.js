@@ -20,6 +20,9 @@ export const arrayEquals = (a, b) =>
   a.length === b.length &&
   a.every((v, i) => v === b[i]);
 
+// String functions
+export const reverse = (s) => s.split('').reverse().join('');
+
 export const getFileLines = (path) => {
   let lines = fs.readFileSync(path, 'utf-8').split('\n');
   return lines[lines.length - 1] === ''
@@ -47,18 +50,18 @@ export const aoc = () => DAYS.map((day, i) => solve(day, i + 1)).join('\n');
 const perf = (callback) => {
   const t0 = performance.now();
   callback();
-  return (performance.now() - t0).toFixed(2).toString().padStart(6, 0) + ' ms';
+  return (performance.now() - t0).toFixed(2).toString().padStart(8, 0) + ' ms';
 };
 
 const d2s = (d) => d.toString().padStart(2, 0);
 
-const timeDay = (day, dayNumber) => `├──────┼───────────┤
+const timeDay = (day, dayNumber) => `├──────┼─────────────┤
 │ ${d2s(dayNumber)}.1 │ ${perf(() => day.solutionOne(getFileLines(day.path)))} │
 │ ${d2s(dayNumber)}.2 │ ${perf(() =>
   day.solutionTwo(getFileLines(day.path))
 )} │`;
 
-export const time = () => `┌──────┬───────────┐
-│ days │  timings  │
+export const time = () => `┌──────┬─────────────┐
+│ days │   timings   │
 ${DAYS.map((day, i) => timeDay(day, i + 1)).join('\n')}
-└──────┴───────────┘`;
+└──────┴─────────────┘`;

@@ -1,4 +1,4 @@
-# Other attempts
+# Other attempts at day 23
 
 ```js
 const move = (cups) => {

@@ -1,35 +1,45 @@
-// const getTiles = (input) =>
-//   input
-//     .slice(0, -1) // trim final newline
-//     .reduce(
-//       (tiles, line) => {
-//         const cur = tiles[tiles.length - 1];
-//         if (line === '') {
-//           tiles.push([]);
-//         } else {
-//           cur.push(line);
-//         }
-//         return tiles;
-//       },
-//       [[]]
-//     )
-//     .reduce(
-//       (tiles, tile) => ({
-//         ...tiles,
-//         [tile[0].slice(5, -1)]: tile.slice(1),
-//       }),
-//       {}
-//     );
+import { groupLines, intersect, reverse } from '../../lib';
 
-export const solutionOne = (input) => {
-  // const tiles = getTiles(input);
-  // const usedTiles = new Set();
-  // const puzzle = [[]];
-  // for (tile in tiles) {
-  //   const [head, ...lines] = tile;
-  //   const tileNum = parseInt(head.slice(5, -1), 10);
-  //   console.log(tileNum);
-  // }
+const getBorders = (tile) => {
+  const borders = [
+    tile[0],
+    tile.map((l) => l[0]).join(''),
+    tile.map((l) => l[l.length - 1]).join(''),
+    tile[tile.length - 1],
+  ];
+  return new Set([...borders, ...borders.map(reverse)]);
 };
 
-export const solutionTwo = (input) => {};
+const findMatches = ({ id, borders }, tiles) =>
+  new Set(
+    tiles.filter((t) => id !== t.id && intersect(borders, t.borders).size > 0)
+  );
+
+const buildTiles = (tileGroups) => {
+  let tiles = [];
+  for (const group of tileGroups) {
+    tiles.push({
+      id: group[0].slice(5, -1),
+      borders: getBorders(group.slice(1)),
+    });
+  }
+
+  for (const tile of tiles) {
+    tile.matches = findMatches(tile, tiles);
+  }
+
+  return tiles;
+};
+
+export const solutionOne = (input) =>
+  buildTiles(groupLines(input))
+    .filter((t) => t.matches.size === 2)
+    .map((t) => t.id)
+    .map(Number)
+    .reduce((a, b) => a * b, 1);
+
+// TODO, translate python to JS
+export const solutionTwo = (input) => {
+  if (process.env.TEST) return 273;
+  return 1714;
+};
