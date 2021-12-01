@@ -1,6 +1,6 @@
-import { sum, numericSort } from '../../lib';
+import { sum, numSort } from '../../lib';
 
-const parse = (line) => line.split('x').map(Number).sort(numericSort);
+const parse = (line) => line.split('x').map(Number).sort(numSort);
 
 const vol = (l, w, h) => l * w * h;
 const area = (l, w, h) => 2 * l * w + 2 * w * h + 2 * h * l;

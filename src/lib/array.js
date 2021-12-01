@@ -1,7 +1,7 @@
 // Array functions
 export const sum = (arr) => arr.reduce((s, n) => s + n, 0);
 export const nums = (input) => input.map(Number);
-export const numericSort = (a, b) => a - b;
+export const numSort = (a, b) => a - b;
 
 export const arrayEquals = (a, b) =>
   Array.isArray(a) &&

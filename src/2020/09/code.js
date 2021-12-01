@@ -1,5 +1,5 @@
 import { findPair } from '../01';
-import { numericSort, nums, sum } from '../../lib';
+import { numSort, nums, sum } from '../../lib';
 
 const findInvalidNumber = (numbers, bufferSize) => {
   for (let i = bufferSize; i < numbers.length; i++) {
@@ -30,6 +30,6 @@ export const solutionOne = (input, bufferSize = 25) =>
 export const solutionTwo = (input, bufferSize = 25) => {
   const numbers = nums(input);
   const targetSum = findInvalidNumber(numbers, bufferSize);
-  const sequence = findSequence(numbers, targetSum).sort(numericSort);
+  const sequence = findSequence(numbers, targetSum).sort(numSort);
   return sequence.shift() + sequence.pop();
 };
