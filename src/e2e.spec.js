@@ -1,8 +1,10 @@
 import { getFileLines } from './lib';
+import days2015 from './2015';
 import days2020 from './2020';
 import days2021 from './2021';
 
 const solutions = {
+  2015: days2015,
   2020: days2020,
   2021: days2021,
 };
