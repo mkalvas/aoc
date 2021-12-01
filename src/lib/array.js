@@ -16,3 +16,6 @@ export const zip = (a, b) =>
 
 export const zipSelf = (a) =>
   a.reduce((z, v, i) => (i < 1 ? [] : [...z, [a[i - 1], v]]), []);
+
+export const takeEvery = (a, every = 2, offset = 0) =>
+  a.filter((_, i) => (i + offset) % every === 0);

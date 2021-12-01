@@ -1,11 +1,11 @@
 import { solutionOne, solutionTwo } from './code';
 
 const day = {
-  label: 'Sqft of Wrapping Paper',
+  label: 'Houses visited',
   path: `${__dirname}/input.txt`,
   solutionOne,
   solutionTwo,
-  answers: [1598415, 3812909],
+  answers: [2572, 2631],
 };
 
 export default day;
