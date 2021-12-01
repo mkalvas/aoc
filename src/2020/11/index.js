@@ -5,6 +5,7 @@ const day = {
   path: `${__dirname}/input.txt`,
   solutionOne,
   solutionTwo,
+  answers: [2448, 2234],
 };
 
 export default day;

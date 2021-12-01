@@ -1,17 +1,22 @@
 {
-  "name": "aoc-2020",
-  "version": "0.14.0",
+  "name": "aoc",
+  "version": "1.1.0",
+  "author": "mkalvas",
+  "main": "bin/aoc.js",
+  "bin": {
+    "aoc": "./bin/aoc.js"
+  },
   "scripts": {
     "build": "babel src --out-dir build --copy-files",
     "build:watch": "babel src --watch --out-dir build --copy-files",
     "test": "jest",
     "clean": "rm -rf build",
     "dev": "npm run clean && npm run build:watch",
-    "start": "node build/index.js",
-    "time": "node build/timings.js",
-    "cloc": "grep -Rcv '^s*$' --include='code.js' ./src"
+    "start": "node bin/aoc.js run"
   },
-  "dependencies": {},
+  "dependencies": {
+    "yargs": "^17.2.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",

@@ -6,7 +6,37 @@ This is a small repo for coding and testing solutions to [Advent of Code](https:
 
 This year I decided to write in JS because I know it well and I wanted to try and stick with it. I'm guessing that using a familiar language will cut down on the time it takes to solve each day and remove the frustrating gap between knowing the solution but not getting it to work right because of my ignorance of a new language. Both of those should give me a better shot at actually completing this year.
 
-I also decided to write up my thought process and solution explanations on my blog. Here's [a link to the index post](https://blog.mkalvas.com/posts/aoc-2020) that links out to all the other solutions. You'll need to go through that page to find the individual posts because I didn't want them cluttering up the main blog page.
+I also decided to write up my thought process and solution explanations on my blog. Here's [a link to the index post](https://mkalvas.com/blog/aoc-2020) that links out to all the other solutions.
+
+## [2021](https://adventofcode.com/2021)
+
+Last year was super successful and I finished all the puzzles! So this year I'm going to stick with JS since it's working. Here's the link to the new [blog post](https://mkalvas.com/blog/aoc-2021).
+
+## Organization
+
+The solutions are in the [`./src`](src) folder organized by year and day. To simplify setup, testing, and running, all the days adhere to a template structure.
+
+Each day folder has:
+
+1. `code.js` — must export a `solutionOne` and `solutionTwo`
+2. `input.txt` — the puzzle input downloaded from AOC
+3. `puzzle.md` — a copy of the puzzle text in markdown
+4. `test.spec.js` — a spec file with whatever tests for the day. This should test the `solutionOne` and `solutionTwo` functions from `code.js`.
+5. `index.js` — must export an object with the following interface
+
+```js
+{
+  label: "Label for the day's answer", // purely for display purposes
+  path: `${__dirname}/input.txt`, // always this exactly
+  solutionOne,
+  solutionTwo,
+  answers: ['one', 'two'], // answers with real inputs for e2e purposes
+};
+```
+
+To add a new day, run the CLI `new` command ([see below](#cli)) which will copy a template day to the year and day specified.
+
+## Commands
 
 ```sh
 # Install deps
@@ -17,11 +47,47 @@ npm run dev
 
 # Running tests
 npm run test
-npm run test:watch
+npm run test -- --watch 2020/01 # run just 2020 day 1 in watch mode
 
 # Run build once
 npm run build
 
-# Run all puzzles and see the solution output
+# Run all puzzles and see the solution output (requires a build to run)
 npm start
+```
+
+### CLI
+
+I've also started working on CLI for running different days and getting/submitting answers. Right now it only runs solutions.
+
+To install the CLI run
+
+```sh
+# In the project root
+npm i -g .
+
+# Test it installed correctly
+aoc run --help
+```
+
+To add a templated day
+
+```sh
+aoc new <year> <day>
+```
+
+Then while working on a solution the typical workflow is something like this.
+
+1. Run build watcher and tests in background
+2. Once the tests are passing, run the CLI for the real input and get an answer
+
+```sh
+# In one terminal
+npm run dev
+
+# In another terminal, watch the day's tests
+npm test -- --watch 2020/01
+
+# Once tests are green, run and get an answer
+aoc run -y 2020 -d 01
 ```
