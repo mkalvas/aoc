@@ -20,7 +20,7 @@ const move = (cups) => {
 
 const solution = (input, loops, cupCount) => {
   let cups = Array.from({ length: cupCount - 9 }, (v, i) => i + 10);
-  cups.unshift(...parseInts(input[0].split('')));
+  cups.unshift(...nums(input[0].split('')));
   for (let i = 0; i < loops; i++) {
     cups = move(cups);
   }

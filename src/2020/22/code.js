@@ -1,7 +1,7 @@
-import { arrayEquals, groupLines, parseInts } from '../../lib';
+import { arrayEquals, groupLines, nums } from '../../lib';
 
 const parsePlayerDecks = (input) =>
-  groupLines(input).map((player) => parseInts(player.slice(1)));
+  groupLines(input).map((player) => nums(player.slice(1)));
 
 const score = (deck) =>
   deck.reduce((score, card, i) => score + card * (deck.length - i), 0);

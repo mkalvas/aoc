@@ -1,4 +1,4 @@
-import { parseInts } from '../../lib';
+import { nums } from '../../lib';
 
 const DIVISOR = 20201227;
 
@@ -21,7 +21,7 @@ const transform = (number, loopSize) => {
 };
 
 export const solutionOne = (input) => {
-  const [cardPubKey, doorPubKey] = parseInts(input);
+  const [cardPubKey, doorPubKey] = nums(input);
   const loopSize = crackLoopSize(cardPubKey);
   return transform(doorPubKey, loopSize);
 };

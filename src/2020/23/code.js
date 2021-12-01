@@ -1,4 +1,4 @@
-import { parseInts } from '../../lib';
+import { nums } from '../../lib';
 
 const initCups = (cupValues, cupCount) => {
   let cups = [];
@@ -33,7 +33,7 @@ const move = (head, map) => {
 };
 
 const solution = (input, loops, cupCount) => {
-  let [head, map] = initCups(parseInts(input[0].split('')), cupCount);
+  let [head, map] = initCups(nums(input[0].split('')), cupCount);
   for (let i = 0; i < loops; i++) {
     [head, map] = move(head, map);
   }

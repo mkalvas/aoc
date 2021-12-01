@@ -1,4 +1,4 @@
-import { parseInts } from '../../lib';
+import { nums } from '../../lib';
 
 const TARGET_SUM = 2020;
 
@@ -19,6 +19,6 @@ const findTriplet = (numbers) => {
   }
 };
 
-export const solutionOne = (input) => findPair(parseInts(input));
+export const solutionOne = (input) => findPair(nums(input));
 
-export const solutionTwo = (input) => findTriplet(parseInts(input));
+export const solutionTwo = (input) => findTriplet(nums(input));

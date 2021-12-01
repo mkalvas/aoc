@@ -1,9 +1,9 @@
-import { cons, parseInts, sum } from '../../lib';
+import { cons, nums, sum } from '../../lib';
 
 const inc = (input) =>
-  cons(parseInts(input))
+  cons(nums(input))
     .map(([a, b]) => b > a)
     .filter(Boolean).length;
 
 export const solutionOne = (input) => inc(input);
-export const solutionTwo = (input) => inc(cons(parseInts(input), 3).map(sum));
+export const solutionTwo = (input) => inc(cons(nums(input), 3).map(sum));

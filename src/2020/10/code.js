@@ -1,7 +1,7 @@
-import { numericSort, parseInts, sum } from '../../lib';
+import { numericSort, nums, sum } from '../../lib';
 
 export const parseInput = (input) => {
-  const adapters = parseInts(input).sort(numericSort);
+  const adapters = nums(input).sort(numericSort);
   return [0, ...adapters, adapters[adapters.length - 1] + 3];
 };
 

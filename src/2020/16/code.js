@@ -1,11 +1,11 @@
-import { groupLines, parseInts, sum } from '../../lib';
+import { groupLines, nums, sum } from '../../lib';
 
-const parseTicket = (ticketLine) => parseInts(ticketLine.split(','));
+const parseTicket = (ticketLine) => nums(ticketLine.split(','));
 
 const parseRules = (lines) =>
   lines.reduce((rules, def) => {
     const [name, values] = def.split(': ');
-    const [r1Min, r1Max, r2Min, r2Max] = parseInts(values.split(/(?: or |-)/g));
+    const [r1Min, r1Max, r2Min, r2Max] = nums(values.split(/(?: or |-)/g));
     return {
       ...rules,
       [name]: [
