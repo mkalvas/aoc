@@ -1,11 +1,11 @@
 import { solutionOne, solutionTwo } from './code';
 
 const day = {
-  label: '',
+  label: 'Increasing Increments',
   path: `${__dirname}/input.txt`,
   solutionOne,
   solutionTwo,
-  answers: [undefined, undefined],
+  answers: [1502, 1538],
 };
 
 export default day;
