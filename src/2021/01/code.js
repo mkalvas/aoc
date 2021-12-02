@@ -1,9 +1,6 @@
-import { cons, nums, sum } from '../../lib';
+import { nums, sum, zip } from '../../lib';
 
-const inc = (input) =>
-  cons(nums(input))
-    .map(([a, b]) => b > a)
-    .filter(Boolean).length;
+const inc = (rs, x) => sum(zip(rs, rs.slice(x)).map(([a, b]) => +(a < b)));
 
-export const solutionOne = (input) => inc(input);
-export const solutionTwo = (input) => inc(cons(nums(input), 3).map(sum));
+export const solutionOne = (input) => inc(nums(input), 1);
+export const solutionTwo = (input) => inc(nums(input), 3);
