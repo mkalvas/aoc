@@ -12,22 +12,22 @@ export const YEARS = {
 };
 
 const TOP = `
-┌───────────────────────────────────────────────────────────────────────────────────────┐
+┌──────────────────────────────────────────────────────────────────────────────┐
 `.trim();
 const HEAD = `
-├─────┬──────┬─────────────┬────────────────────────────────────────────────────────────┤
-│ LOC │ PART │   TIMING    │                           ANSWER                           │
+├─────┬──────┬────────────┬────────────────────────────────────────────────────┤
+│ LOC │ PART │   TIMING   │                      ANSWER                        │
 `.trim();
 // const YEAR_START = `├${'─'.padEnd(87, '─')}┤`;
-const YEAR_END = `├─────┬──────┬─────────────┬${'─'.padEnd(60, '─')}┤`;
-const YEAR_START = `├─────┴──────┴─────────────┴${'─'.padEnd(60, '─')}┤`;
-const DAY_START = `├─────┼──────┼─────────────┼${'─'.padEnd(60, '─')}┤`;
-const BOTTOM = `└─────┴──────┴─────────────┴${'─'.padEnd(60, '─')}┘`;
-const message = (y) => `│ ${y.padEnd(85, ' ')} │`;
+const YEAR_END = `├─────┬──────┬────────────┬${'─'.padEnd(52, '─')}┤`;
+const YEAR_START = `├─────┴──────┴────────────┴${'─'.padEnd(52, '─')}┤`;
+const DAY_START = `├─────┼──────┼────────────┼${'─'.padEnd(52, '─')}┤`;
+const BOTTOM = `└─────┴──────┴────────────┴${'─'.padEnd(52, '─')}┘`;
+const message = (y) => `│ ${y.padEnd(76, ' ')} │`;
 const dayVal = (day, seq, val, time, loc) =>
   `│ ${loc ?? '   '} │ ${day.padStart(2, '0')}.${seq} │ ${time
     .toString()
-    .padStart(8, ' ')} ms │ ${val.padEnd(58, ' ')} │`;
+    .padStart(7, ' ')} ms │ ${val.padEnd(50, ' ')} │`;
 
 const cloc = (year, day) => {
   const cmd = `grep -Rcv '^s*$' ./src/${year}/${day.padStart(2, 0)}/code.js`;
