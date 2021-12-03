@@ -16,5 +16,5 @@ solve dirs = do
 
 main :: IO ()
 main = do
-  input <- readFile "input.txt"
-  print $ solve $ map parseDir $ lines input
+  input <- lines <$> readFile "input.txt"
+  print $ solve $ map parseDir input

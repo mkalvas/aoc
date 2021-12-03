@@ -1,9 +1,11 @@
+import Enum, only: [map: 2, reduce: 3, join: 2]
+
 defmodule Day do
   def input do
-    "input.txt"
+    Path.join(Path.dirname(__ENV__.file), "input.txt")
     |> File.read!()
     |> String.split("\n", trim: true)
-    |> Enum.map(fn line ->
+    |> map(fn line ->
       [cmd, arg] = String.split(line)
       {cmd, String.to_integer(arg)}
     end)
@@ -12,7 +14,7 @@ defmodule Day do
   def solve() do
     {horiz, depth, aim} =
       input()
-      |> Enum.reduce({0, 0, 0}, fn
+      |> reduce({0, 0, 0}, fn
         {"up", n}, {horiz, depth, aim} -> {horiz, depth, aim - n}
         {"down", n}, {horiz, depth, aim} -> {horiz, depth, aim + n}
         {"forward", n}, {horiz, depth, aim} -> {horiz + n, depth + n * aim, aim}
@@ -22,4 +24,4 @@ defmodule Day do
   end
 end
 
-IO.puts(Day.solve() |> Tuple.to_list() |> Enum.join("\n"))
+IO.puts(Day.solve() |> Tuple.to_list() |> join("\n"))
