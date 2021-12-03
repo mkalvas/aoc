@@ -1,6 +1,6 @@
 import day01 from './01';
 import day02 from './02';
-// import day03 from './03';
+import day03 from './03';
 // import day04 from './04';
 // import day05 from './05';
 // import day06 from './06';
@@ -27,7 +27,7 @@ import day02 from './02';
 export default {
   1: day01,
   2: day02,
-  // 3: day03,
+  3: day03,
   // 4: day04,
   // 5: day05,
   // 6: day06,
