@@ -1,4 +1,11 @@
+const { join } = require('path');
+const chokidar = require('chokidar');
 const { aoc } = require('../../build');
+
+const run = (year, day, message) => {
+  console.clear();
+  console.log(aoc(year, day, message));
+};
 
 exports.command = ['run [-y | --year] [-d | --day]', 'r'];
 exports.describe = 'Run one or more puzzle';
@@ -16,10 +23,16 @@ exports.builder = (yargs) => {
       default: 'all',
       type: 'string',
     })
+    .option('watch', {
+      alias: 'w',
+      describe: 'Watch for changes and re-run',
+      default: false,
+      type: 'boolean',
+    })
     .group(['year', 'day'], 'Puzzle:');
 };
 
-exports.handler = function ({ year, day }) {
+exports.handler = function ({ year, day, watch }) {
   let message = '';
   if (year === 'all' && day === 'all') {
     message = 'Running all puzzles...';
@@ -31,5 +44,11 @@ exports.handler = function ({ year, day }) {
     message = `Running day ${day} for year ${year}...`;
   }
 
-  console.log(aoc(year, day, message));
+  run(year, day, message); // always run once
+  if (watch) {
+    const path = `${join(__dirname, '../../build')}/**/*.js`;
+    chokidar.watch(path, { ignored: ['**/*.spec.js'] }).on('change', () => {
+      run(year, day, message); // sometimes keep running
+    });
+  }
 };
