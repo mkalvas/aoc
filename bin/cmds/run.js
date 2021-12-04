@@ -46,6 +46,7 @@ exports.handler = function ({ year, day, watch }) {
 
   run(year, day, message); // always run once
   if (watch) {
+    // TODO: Doesn't actually work. `aoc` isn't reloading on build changes.
     const path = `${join(__dirname, '../../build')}/**/*.js`;
     chokidar.watch(path, { ignored: ['**/*.spec.js'] }).on('change', () => {
       run(year, day, message); // sometimes keep running
