@@ -12,7 +12,7 @@ exports.builder = (yargs) => {
     })
     .positional('day', {
       describe: 'Day of the puzzle',
-      default: new Date().getDate(),
+      default: new Date().getDate() + 1,
       type: 'string',
     });
 };
@@ -20,7 +20,6 @@ exports.builder = (yargs) => {
 exports.handler = function ({ year, day }) {
   const dayPath = join(__dirname, '..', '..', 'src', year, day);
   const templatePath = join(__dirname, '..', 'template');
-  console.log(dayPath, templatePath);
 
   console.log(`Creating ${year} day ${day} from template...`);
   execSync(`mkdir -p ${dayPath}`);
