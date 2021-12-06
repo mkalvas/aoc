@@ -12,10 +12,12 @@
     "test": "jest",
     "clean": "rm -rf build",
     "dev": "npm run clean && npm run build:watch",
-    "start": "node bin/aoc.js run"
+    "start": "node bin/aoc.js run",
+    "obfuscate": "terser"
   },
   "dependencies": {
     "chokidar": "^3.5.2",
+    "terser": "^5.10.0",
     "yargs": "^17.2.1"
   },
   "devDependencies": {

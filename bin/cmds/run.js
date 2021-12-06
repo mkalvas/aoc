@@ -29,7 +29,7 @@ exports.builder = (yargs) => {
       default: false,
       type: 'boolean',
     })
-    .group(['year', 'day'], 'Puzzle:');
+    .group(['year', 'day', 'watch'], 'CLI:');
 };
 
 exports.handler = function ({ year, day, watch }) {

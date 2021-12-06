@@ -1,4 +1,4 @@
-import { sum, transpose } from '../../lib';
+import { sum } from '../../lib';
 
 const parse = (input) =>
   input.map((l) => l.split(' -> ').map((p) => p.split(',').map(Number)));
