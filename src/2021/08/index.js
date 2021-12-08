@@ -1,11 +1,11 @@
 import { solutionOne, solutionTwo } from './code';
 
 const day = {
-  label: 'Lanternfish',
+  label: 'Decoded',
   path: `${__dirname}/input.txt`,
   solutionOne,
   solutionTwo,
-  answers: [379414, 1705008653296],
+  answers: [237, 1009098],
 };
 
 export default day;

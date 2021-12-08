@@ -18,11 +18,11 @@ The solutions are in the [`./src`](src) folder organized by year and day. To sim
 
 Each day folder has:
 
-1. `code.js` — must export a `solutionOne` and `solutionTwo`
-2. `input.txt` — the puzzle input downloaded from AOC
-3. `puzzle.md` — a copy of the puzzle text in markdown
-4. `test.spec.js` — a spec file with whatever tests for the day. This should test the `solutionOne` and `solutionTwo` functions from `code.js`.
-5. `index.js` — must export an object with the following interface
+1. `code.js` — must export a `solutionOne` and `solutionTwo`
+2. `input.txt` — the puzzle input downloaded from AOC
+3. `puzzle.md` — a copy of the puzzle text in markdown
+4. `test.spec.js` — a spec file with whatever tests for the day. This should test the `solutionOne` and `solutionTwo` functions from `code.js`.
+5. `index.js` — must export an object with the following interface
 
 ```js
 {

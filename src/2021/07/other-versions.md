@@ -36,8 +36,6 @@ const solutionTwo = (input) => {
     }
   }
 
-  console.log(tracker);
-
   let min = undefined;
   for (const [pos, fuel] of tracker) {
     if (min === undefined || fuel < min.fuel) min = { pos, fuel };
