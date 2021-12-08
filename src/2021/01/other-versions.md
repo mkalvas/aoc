@@ -1,6 +1,6 @@
-# Other attempts for 2021 day 01
+# Other versions of 2021 day 01
 
-First attempt for easy speed
+## First attempt for easy speed
 
 ```js
 const increases = (nums) => {
@@ -25,7 +25,7 @@ export const solutionOne = (input) => increases(parseInts(input));
 export const solutionTwo = (input) => threeWindowIncreases(parseInts(input));
 ```
 
-Second attempt at a more functional approach
+## Second attempt at a more functional approach
 
 ```js
 const inc = (input) =>

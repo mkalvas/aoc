@@ -1,5 +1,6 @@
 export * from './array';
 export * from './files';
 export * from './runner';
-export * from './string';
 export * from './set';
+export * from './stats';
+export * from './string';

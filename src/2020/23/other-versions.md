@@ -1,4 +1,4 @@
-# Other attempts at day 23
+# Other versions of 2020 day 23
 
 ```js
 const move = (cups) => {

@@ -1,4 +1,4 @@
-# Other attempts at day 06
+# Other versions of 2021 day 06
 
 ## Slow naïve part one
 

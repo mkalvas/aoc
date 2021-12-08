@@ -4,6 +4,8 @@ export const sum = (arr) => arr.reduce((s, n) => s + n, 0);
 export const nums = (input) => input.map(Number);
 export const numSort = (a, b) => a - b;
 export const transpose = (a) => a[0].map((_, c) => a.map((r) => r[c]));
+export const range = (a, b) =>
+  Array.from({ length: b - a + 1 }).map((_, i) => a + i);
 
 export const arrayEquals = (a, b) =>
   Array.isArray(a) &&

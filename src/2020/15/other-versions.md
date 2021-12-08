@@ -1,4 +1,4 @@
-# Other attempts at day 15
+# Other versions of 2020 day 15
 
 ## Attempt 1: working but very slow
 
