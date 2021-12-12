@@ -103,3 +103,47 @@ describe('diffs', () => {
     expect(array.diffs([1, 2, 4])).toEqual([1, 2]);
   });
 });
+
+describe('nbrs', () => {
+  const grid = [
+    ['x', 'x', 'x', 'x', 'x'],
+    ['x', 'x', 'x', 'x', 'x'],
+    ['x', 'a', 'b', 'c', 'x'],
+    ['x', 'd', 'e', 'f', 'x'],
+    ['x', 'g', 'h', 'i', 'x'],
+    ['x', 'x', 'x', 'x', 'x'],
+  ];
+
+  it('returns the neighbors of a cell with diagonals and origin', () => {
+    expect(array.nbrs(grid, 3, 2)).toEqual([
+      ['a', 2, 1],
+      ['b', 2, 2],
+      ['c', 2, 3],
+      ['d', 3, 1],
+      ['e', 3, 2],
+      ['f', 3, 3],
+      ['g', 4, 1],
+      ['h', 4, 2],
+      ['i', 4, 3],
+    ]);
+  });
+
+  it('returns the neighbors of a cell without diagonals and with origin', () => {
+    expect(array.nbrs(grid, 3, 2, false)).toEqual([
+      ['b', 2, 2],
+      ['d', 3, 1],
+      ['e', 3, 2],
+      ['f', 3, 3],
+      ['h', 4, 2],
+    ]);
+  });
+
+  it('returns the neighbors of a cell without diagonals nor origin', () => {
+    expect(array.nbrs(grid, 3, 2, false, false)).toEqual([
+      ['b', 2, 2],
+      ['d', 3, 1],
+      ['f', 3, 3],
+      ['h', 4, 2],
+    ]);
+  });
+});

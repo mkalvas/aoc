@@ -34,3 +34,26 @@ export const cons = (a, size = 2) =>
 
 export const diffs = (a) =>
   a.reduce((acc, x, i) => (i - 1 < 0 ? [] : [...acc, x - a[i - 1]]), []);
+
+export const nbrs = (a, i, j, includeDiagonal = true, includeOrigin = true) => {
+  let nbrs = [];
+  for (const dr of [-1, 0, 1]) {
+    for (const dc of [-1, 0, 1]) {
+      const r = i + dr;
+      const c = j + dc;
+      const isDiagonal = Math.abs(dr) === Math.abs(dc) && dr !== 0 && dc !== 0;
+      const isOrigin = dr === 0 && dc === 0;
+      if (
+        r >= 0 &&
+        c >= 0 &&
+        r < a.length &&
+        c < a[i].length &&
+        (includeDiagonal || !isDiagonal) &&
+        (includeOrigin || !isOrigin)
+      ) {
+        nbrs.push([a[r][c], r, c]);
+      }
+    }
+  }
+  return nbrs;
+};

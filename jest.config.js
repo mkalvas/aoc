@@ -1,4 +1,4 @@
 module.exports = {
   collectCoverageFrom: ['src/**/*.js', '!**/node_modules/**'],
-  testPathIgnorePatterns: ['/node_modules/', '/build'],
+  testPathIgnorePatterns: ['/bin', '/build', '/node_modules/'],
 };

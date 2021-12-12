@@ -1,4 +1,4 @@
-# Other attempts at 2021 day 7
+# Other versions of 2021 day 7
 
 ## Confused unga bunga = brute force
 

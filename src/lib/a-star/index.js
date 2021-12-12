@@ -1,2 +1,2 @@
 export { Graph } from './graph';
-export { astar } from './astar';
+export { search } from './a-star';
