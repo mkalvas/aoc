@@ -43,6 +43,13 @@ describe('transpose', () => {
   });
 });
 
+describe('count', () => {
+  it('returns the count of a value in the array', () => {
+    expect(array.count([2, 5, 2, 3, 2], 2)).toEqual(3);
+    expect(array.count(['a', 'b', 'a'], 'a')).toEqual(2);
+  });
+});
+
 describe('range', () => {
   it('returns a range between two numbers', () => {
     expect(array.range(2, 5)).toEqual([2, 3, 4, 5]);

@@ -24,16 +24,16 @@ const INPUT = [
   'fold along x=5',
 ];
 
-// I changed the symbols for this output to be more readable.
-// The problem has them as # and .
+// I changed the symbols. The problem has them as `#` and `.`
 const ASCII = `
-█████
-█   █
-█   █
-█   █
-█████
-     
-     `.trimStart();
+11111
+10001
+10001
+10001
+11111
+00000
+00000
+`.trim();
 
 describe('puzzle one', () => {
   it('Counts the number of dots visible after the first fold', () => {
