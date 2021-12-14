@@ -15,6 +15,7 @@ const solve = (day) => {
 };
 
 describe('e2e pinnning test for puzzle solutions', () => {
+  process.env.NODE_ENV = 'production';
   Object.entries(solutions).forEach(([year, days]) => {
     describe(`${year}`, () => {
       Object.values(days).forEach((day, i) => {

@@ -3,6 +3,8 @@
 const yargs = require('yargs');
 const { hideBin } = require('yargs/helpers');
 
+process.env.NODE_ENV = 'production';
+
 yargs(hideBin(process.argv))
   .scriptName('aoc')
   .commandDir('./cmds')

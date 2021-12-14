@@ -45,7 +45,7 @@ describe('puzzle one', () => {
 });
 
 describe('puzzle two', () => {
-  it('', () => {
+  it('Counts the number of paths through the cave', () => {
     expect(solutionTwo(INPUT_1)).toEqual(36);
     expect(solutionTwo(INPUT_2)).toEqual(103);
     expect(solutionTwo(INPUT_3)).toEqual(3509);

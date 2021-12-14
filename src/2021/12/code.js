@@ -18,7 +18,7 @@ const search = (nbrs, allowedVisits, seen = new Set(), cave = 'start') => {
     }
   }
   return nbrs[cave].reduce(
-    (sum, n) => sum + search(nbrs, part, new Set([...seen, cave]), n),
+    (sum, n) => sum + search(nbrs, allowedVisits, new Set([...seen, cave]), n),
     0
   );
 };
