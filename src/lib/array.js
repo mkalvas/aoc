@@ -1,7 +1,7 @@
 // Array functions
-export const product = (arr) => arr.reduce((p, n) => p * n, 1);
-export const sum = (arr) => arr.reduce((s, n) => s + n, 0);
-export const nums = (input) => input.map(Number);
+export const product = (a) => a.reduce((p, n) => p * n, 1);
+export const sum = (a) => a.reduce((s, n) => s + n, 0);
+export const nums = (a) => a.map(Number);
 export const numSort = (a, b) => a - b;
 export const transpose = (a) => a[0].map((_, c) => a.map((r) => r[c]));
 export const count = (a, v) => a.filter((x) => x === v).length;
