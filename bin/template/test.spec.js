@@ -3,13 +3,13 @@ import { solutionOne, solutionTwo } from './code';
 const INPUT = [];
 
 describe('puzzle one', () => {
-  xit('', () => {
+  it('', () => {
     expect(solutionOne(INPUT)).toEqual(undefined);
   });
 });
 
 describe('puzzle two', () => {
-  xit('', () => {
+  it('', () => {
     expect(solutionTwo(INPUT)).toEqual(undefined);
   });
 });

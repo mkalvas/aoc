@@ -50,6 +50,12 @@ describe('count', () => {
   });
 });
 
+describe('counter', () => {
+  it('returns the count of all values in the array', () => {
+    expect(array.counter(['a', 'b', 'a'])).toEqual({ a: 2, b: 1 });
+  });
+});
+
 describe('range', () => {
   it('returns a range between two numbers', () => {
     expect(array.range(2, 5)).toEqual([2, 3, 4, 5]);
