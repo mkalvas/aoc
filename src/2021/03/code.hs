@@ -1,10 +1,10 @@
 import Data.Char (digitToInt)
 
-b2i :: String -> Int
-b2i = foldl (\acc x -> acc * 2 + digitToInt x) 0
+b2d :: String -> Int
+b2d = foldl (\acc x -> acc * 2 + digitToInt x) 0
 
 getAnswer :: [String] -> Int
-getAnswer = product . map b2i
+getAnswer = product . map b2d
 
 getBitFreqs :: Int -> [String] -> (Int, Int)
 getBitFreqs i =
