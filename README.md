@@ -91,3 +91,11 @@ npm test -- --watch 2020/01
 # Once tests are green, run and get an answer
 aoc run -y 2020 -d 01
 ```
+
+### Other languages
+
+I occasionally write solutions in other languages for fun. Here are some quick ways to run them given you have the required toolchain installed.
+
+- Elixir: `elixir code.exs`
+- Haskell: `runhaskell code.hs`
+- Rust: `cargo run`

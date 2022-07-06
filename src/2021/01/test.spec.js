@@ -15,7 +15,7 @@ const INPUT = [
 
 describe('puzzle one', () => {
   it('Counts the number of increasing readings', () => {
-    // expect(solutionOne(INPUT)).toEqual(7);
+    expect(solutionOne(INPUT)).toEqual(7);
   });
 });
 

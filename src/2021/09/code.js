@@ -1,4 +1,4 @@
-import { nums, numSort, sum, product, union } from '../../lib';
+import { nums, numSort, product, sum, union } from '../../lib';
 
 const getNeighbors = (map, i, j) =>
   [

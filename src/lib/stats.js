@@ -1,6 +1,7 @@
 // Statistics functions
 import { numSort, sum } from './array';
 
+export const gauss = (n) => (n * (n + 1)) / 2;
 export const mean = (a) => sum(a) / a.length;
 
 export const median = (a, sorted = false) => {
