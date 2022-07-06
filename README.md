@@ -12,6 +12,10 @@ I also decided to write up my thought process and solution explanations on my bl
 
 Last year was super successful and I finished all the puzzles! So this year I'm going to stick with JS since it's working. Here's the link to the new [blog post](https://mkalvas.com/blog/aoc-2021).
 
+## [2015](https://adventofcode.com/2015)
+
+I'm going back and doing the 2015 year during the summer of 2022. I'm going to attempt to do each day in JS, Haskell, and Rust. As with the other years, here's a link to the [blog post](https://mkalvas.com/blog/aoc-2015).
+
 ## Organization
 
 The solutions are in the [`./src`](src) folder organized by year and day. To simplify setup, testing, and running, all the days adhere to a template structure.
