@@ -1,4 +1,4 @@
-import { nbrs, nums } from '../../lib';
+import { nums } from '../../lib';
 
 const loop = (state, callback) =>
   state.grid.forEach((r, i) => r.forEach((c, j) => callback(c, i, j)));
