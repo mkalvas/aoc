@@ -103,3 +103,9 @@ I occasionally write solutions in other languages for fun. Here are some quick w
 - Elixir: `elixir code.exs`
 - Haskell: `runhaskell code.hs`
 - Rust: `cargo run`
+
+## Roadmap
+
+- [ ] Build a better CLI probably using rust
+- [ ] Build a better Rust specific runnner
+- [ ] Build a better Haskell specific runner

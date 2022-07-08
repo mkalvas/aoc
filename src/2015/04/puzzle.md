@@ -11,6 +11,10 @@ For example:
 
 Your puzzle input is **`bgvyzdsv`**.
 
-Your puzzle answer was ``.
+Your puzzle answer was `254575`.
 
 ## Part Two
+
+Now find one that starts with **six zeroes**.
+
+Your puzzle answer was `1038736`.

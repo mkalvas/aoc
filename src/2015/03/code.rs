@@ -23,8 +23,6 @@ pub fn solution_1(input: &Vec<String>) -> String {
 pub fn solution_2(input: &Vec<String>) -> String {
     let santa = &input[0].chars().step_by(2).collect::<String>();
     let robot = &input[0].chars().skip(1).step_by(2).collect::<String>();
-    println!("{}", santa);
-    println!("{}", robot);
     walk(santa)
         .union(&walk(robot))
         .collect::<Vec<&(i32, i32)>>()

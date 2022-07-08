@@ -3,14 +3,14 @@ import { solutionOne, solutionTwo } from './code';
 const INPUT = ['target area: x=20..30, y=-10..-5'];
 
 describe('puzzle one', () => {
-  it('Finds the highest Y position that still hits the target area', () => {
+  xit('Finds the highest Y position that still hits the target area', () => {
     // initial velocity for this solution [6, 9]
     expect(solutionOne(INPUT)).toEqual(45);
   });
 });
 
 describe('puzzle two', () => {
-  it('Finds the number of distinct trajectories that hit the target', () => {
+  xit('Finds the number of distinct trajectories that hit the target', () => {
     expect(solutionTwo(INPUT)).toEqual(112);
   });
 });

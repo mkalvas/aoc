@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "chokidar": "^3.5.2",
+    "crypto-js": "^4.1.1",
     "terser": "^5.10.0",
     "yargs": "^17.2.1"
   },
