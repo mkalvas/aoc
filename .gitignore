@@ -24,3 +24,7 @@ yarn-error.log*
 
 # Elixir
 .elixir_ls
+
+# Roc
+/bin/roc
+roctoberfest

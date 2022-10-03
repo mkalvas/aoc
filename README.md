@@ -103,9 +103,23 @@ I occasionally write solutions in other languages for fun. Here are some quick w
 - Elixir: `elixir code.exs`
 - Haskell: `runhaskell code.hs`
 - Rust: `cargo run`
+- Roc: `./bin/roc/roc ./src/2021/01/code.roc` from root of repo
 
 ## Roadmap
 
 - [ ] Build a better CLI probably using rust
 - [ ] Build a better Rust specific runnner
 - [ ] Build a better Haskell specific runner
+
+## Roc
+
+[Roc](https://www.roc-lang.org/) is an extremely experimental/new language, so I wouldn't recommend trying to get this working unless you're really interested.
+
+[Setup](https://github.com/roc-lang/roc/blob/main/getting_started/macos_apple_silicon.md) included
+
+- allowed mac to run it -> right click, open with, add exception
+- brew installed `llvm@13`
+  - had to [symlink some stuff](https://github.com/roc-lang/roc/issues/4067#issuecomment-1264371875) for the 10/1 nightly build to work
+- brew installed `zig`
+- moved roc repo/lang into `./bin/roc`
+- run (from root of repo) with `./bin/roc/roc ./src/2021/01/code.roc`
