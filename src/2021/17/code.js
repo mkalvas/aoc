@@ -22,54 +22,83 @@ const minv = (min) => {
   }
 };
 
-const getStepRange = (v, min, max, stopZero = false) => {
-  let minStep;
-  let maxStep;
-  for (let x = 0; x <= max; x += v) {
-    if (x >= min) minStep = x;
-    if (min <= x && x <= max) maxStep = x;
-    if (stopZero) {
-      v = v - 1 >= 0 ? v - 1 : 0;
-    } else {
-      v--;
+const checkXv = (xv, xmin, xmax) => {
+  let pos = 0;
+  while (true) {
+    if (xmin <= pos && pos <= xmax) {
+      return true;
+    } else if (pos > xmax) {
+      return false;
     }
+    pos += xv;
+    xv--;
+    if (xv < 0) return false;
   }
-  return [minStep, maxStep];
 };
 
 const validXVelocities = ({ xmin, xmax }) => {
   const vmin = minv(xmin);
-  for (let i = vmin; i < xmin; i++) {
-    if (i + i - 1 > xmax) {
-      let xvs = [];
-      for (let xv of range(vmin, i - 1)) {
-        const [min, max] = getStepRange(xv, xmin, xmax);
-        xvs.push({ v: xv, min, max });
-      }
-      return xvs;
+  let xvs = [vmin];
+  for (let i = vmin + 1; i <= xmax; i++) {
+    if (checkXv(i, xmin, xmax)) {
+      xvs.push(i);
     }
+  }
+  return xvs;
+};
+
+const checkYv = (yv, ymin, ymax) => {
+  let pos = 0;
+  while (true) {
+    if (ymin <= pos && pos <= ymax) {
+      return true;
+    } else if (pos < ymin) {
+      return false;
+    }
+    pos += yv;
+    yv--;
   }
 };
 
 const validYVelocities = ({ ymin, ymax }) => {
   const vmax = maxv(ymin);
-  for (let i = vmax; i >= -vmax; i--) {
-    if (i + i - 1 < ymin) {
-      let yvs = [];
-      for (let yv of range(i + 1, vmax)) {
-        const [min, max] = getStepRange(yv, ymin, ymax);
-        yvs.push({ v: yv, min, max });
-      }
-      return yvs;
+  let yvs = [vmax];
+  for (let i = vmax - 1; i >= ymin; i--) {
+    if (checkYv(i, ymin, ymax)) {
+      yvs.push(i);
     }
+  }
+  return yvs;
+};
+
+const checkTrajectory = (xv, yv, { xmin, xmax, ymin, ymax }) => {
+  let x = 0;
+  let y = 0;
+  while (true) {
+    if (ymin <= y && y <= ymax && xmin <= x && x <= xmax) {
+      return true;
+    } else if (y < ymin) {
+      return false;
+    }
+    x += xv;
+    y += yv;
+    xv = xv <= 0 ? 0 : xv - 1;
+    yv--;
   }
 };
 
 export const solutionTwo = (input) => {
   const { volume, ...target } = getTarget(input[0]);
-  let xvs = validXVelocities(target);
-  let yvs = validYVelocities(target);
-  let vs = xvs.map((xv) => yvs.map((yv) => [xv, yv]));
-  console.log(xvs, yvs, vs);
-  // return volume + vs.length;
+  const xvs = validXVelocities(target);
+  const yvs = validYVelocities(target);
+  let vs = [];
+  for (const xv of xvs) {
+    for (const yv of yvs) {
+      if (checkTrajectory(xv, yv, target)) {
+        vs.push([xv, yv]);
+      }
+    }
+  }
+
+  return vs.length;
 };
