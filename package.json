@@ -6,6 +6,10 @@
   "bin": {
     "aoc": "./bin/aoc.js"
   },
+  "files": [
+    "bin",
+    "build"
+  ],
   "scripts": {
     "build": "babel src --out-dir build --copy-files",
     "build:watch": "babel src --watch --out-dir build --copy-files",
