@@ -68,7 +68,14 @@ To install the CLI run
 
 ```sh
 # In the project root
+npm run build
+
+# if you want to install just the source version you built
+# you'll have to reinstall after each built
 npm i -g .
+
+# or if you want to code and build and re-run via global `aoc` (recommended)
+npm link
 
 # Test it installed correctly
 aoc run --help
@@ -80,7 +87,7 @@ To add a templated day
 aoc new <year> <day>
 ```
 
-Then while working on a solution the typical workflow is something like this.
+Then while working on a solution the typical workflow is something like this. (given you used the `npm link` installation)
 
 1. Run build watcher and tests in background
 2. Once the tests are passing, run the CLI for the real input and get an answer

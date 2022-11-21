@@ -1,11 +1,11 @@
 import { solutionOne, solutionTwo } from './code';
 
 const day = {
-  label: '',
+  label: 'Snail Number Magnitude',
   path: `${__dirname}/input.txt`,
   solutionOne,
   solutionTwo,
-  answers: [undefined, undefined],
+  answers: [3725, 4832],
 };
 
 export default day;
