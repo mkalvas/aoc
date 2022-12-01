@@ -1,11 +1,11 @@
 import { solutionOne, solutionTwo } from './code';
 
 const day = {
-  label: 'Lowest Path',
+  label: 'Total Calories',
   path: `${__dirname}/input.txt`,
   solutionOne,
   solutionTwo,
-  answers: [755, 3016],
+  answers: [66186, 196804],
 };
 
 export default day;
