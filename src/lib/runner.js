@@ -64,7 +64,8 @@ export const aoc = (year = 'all', day = 'all', msg) => {
       output.push(message(yearNumber));
       output.push(YEAR_END);
       for (const [dayNumber, dayCode] of Object.entries(days)) {
-        if (day === 'all' || day === dayNumber) {
+        const paddedNum = dayNumber.padStart(2, '0');
+        if (day === 'all' || day === dayNumber || day === paddedNum) {
           output.push(...solve(dayCode, dayNumber, yearNumber));
           output.push(DAY_START);
         }
