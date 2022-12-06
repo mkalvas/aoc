@@ -16,6 +16,10 @@ Last year was super successful and I finished all the puzzles! So this year I'm 
 
 I'm going back and doing the 2015 year during the summer of 2022. I'm going to attempt to do each day in JS, Haskell, and Rust. As with the other years, here's a link to the [blog post](https://mkalvas.com/blog/aoc-2015).
 
+## [2022](https://adventofcode.com/2022)
+
+December 2022 is upon us. You know the drill by now. JS as the main language, maybe some others sprinkled in here and there, and the annual [blog post](https://mkalvas.com/blog/aoc-2022).
+
 ## Organization
 
 The solutions are in the [`./src`](src) folder organized by year and day. To simplify setup, testing, and running, all the days adhere to a template structure.
