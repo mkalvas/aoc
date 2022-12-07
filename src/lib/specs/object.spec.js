@@ -9,3 +9,24 @@ describe('findKey', () => {
     expect(object.findKey({ a: 1, b: 2 }, 3)).toBeUndefined();
   });
 });
+
+describe('keys', () => {
+  it('returns keys', () => {
+    expect(object.keys({ a: 1, b: 2 })).toEqual(['a', 'b']);
+  });
+});
+
+describe('vals', () => {
+  it('returns vals', () => {
+    expect(object.vals({ a: 1, b: 2 })).toEqual([1, 2]);
+  });
+});
+
+describe('entries', () => {
+  it('returns entries', () => {
+    expect(object.entries({ a: 1, b: 2 })).toEqual([
+      ['a', 1],
+      ['b', 2],
+    ]);
+  });
+});

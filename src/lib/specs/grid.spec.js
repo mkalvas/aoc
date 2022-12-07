@@ -11,3 +11,25 @@ describe('gridSum', () => {
     expect(grid.gridSum([[1], [2], [3]])).toBe(6);
   });
 });
+
+describe('dist', () => {
+  it('gets the correct distance', () => {
+    expect(grid.dist([3, 0], [0, 0])).toBe(3);
+    expect(grid.dist([0, 0], [0, 3])).toBe(3);
+    expect(grid.dist([0, 0], [1, 1])).toBe(Math.sqrt(2));
+    expect(grid.dist([0, 0, 0], [3, 0, 0])).toBe(3);
+    expect(grid.dist([0, 0, 0], [0, 3, 0])).toBe(3);
+    expect(grid.dist([0, 0, 0], [0, 0, 3])).toBe(3);
+    expect(grid.dist([0, 0, 0], [3, 3, 3])).toBe(Math.sqrt(27));
+  });
+
+  it('gets the correct distance squared', () => {
+    expect(grid.distSq([3, 0], [0, 0])).toBe(9);
+    expect(grid.distSq([0, 0], [0, 3])).toBe(9);
+    expect(grid.distSq([0, 0], [1, 1])).toBe(2);
+    expect(grid.distSq([0, 0, 0], [3, 0, 0])).toBe(9);
+    expect(grid.distSq([0, 0, 0], [0, 3, 0])).toBe(9);
+    expect(grid.distSq([0, 0, 0], [0, 0, 3])).toBe(9);
+    expect(grid.distSq([0, 0, 0], [3, 3, 3])).toBe(27);
+  });
+});

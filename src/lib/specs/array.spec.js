@@ -117,6 +117,22 @@ describe('diffs', () => {
   });
 });
 
+describe('accumulate', () => {
+  it('returns the running sum', () => {
+    expect(array.accumulate([1, 2, 3, 4, 5])).toEqual([1, 3, 6, 10, 15]);
+  });
+
+  it('returns the stepped accumulation for a given binary function', () => {
+    expect(array.accumulate([1, 2, 3, 4, 5], (t = 1, e) => t * e)).toEqual([
+      1, 2, 6, 24, 120,
+    ]);
+  });
+
+  it('returns running concatenation of strings', () => {
+    expect(array.accumulate(['1', '2', '3'])).toEqual(['1', '12', '123']);
+  });
+});
+
 describe('nbrs', () => {
   const grid = [
     ['x', 'x', 'x', 'x', 'x'],

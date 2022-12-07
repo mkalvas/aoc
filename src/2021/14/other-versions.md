@@ -25,9 +25,7 @@ const polymerize = ({ chain, reactions }, steps = 10) => {
 };
 
 export const solutionOne = (input) => {
-  const counts = Object.values(counter(polymerize(parseInput(input)))).sort(
-    numSort
-  );
+  const counts = vals(counter(polymerize(parseInput(input)))).sort(numSort);
   return counts.at(-1) - counts[0];
 };
 ```

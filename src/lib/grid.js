@@ -8,6 +8,10 @@ export const g2s = (grid, padding = 0, padChar = ' ') =>
     .map((row) => row.map((c) => String(c).padStart(padding, padChar)).join(''))
     .join('\n');
 
+// n-dimensional euclidean distance fn([x1, y1, z1, ...], [x2, y2, z2, ...])
+export const distSq = (a, b) => a.reduce((s, ai, i) => s + (b[i] - ai) ** 2, 0);
+export const dist = (a, b) => Math.sqrt(distSq(a, b));
+
 // idea:
 //  grid class that uses 1d array to store 2d since translating is easy
 //  then a `map` function that returns an iterator generator for similar map

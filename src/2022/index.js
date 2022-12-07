@@ -4,7 +4,7 @@ import day03 from './03';
 import day04 from './04';
 import day05 from './05';
 import day06 from './06';
-// import day07 from './07';
+import day07 from './07';
 // import day08 from './08';
 // import day09 from './09';
 // import day10 from './10';
@@ -31,7 +31,7 @@ export default {
   4: day04,
   5: day05,
   6: day06,
-  // 7: day07,
+  7: day07,
   // 8: day08,
   // 9: day09,
   // 10: day10,

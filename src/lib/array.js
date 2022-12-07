@@ -39,6 +39,16 @@ export const cons = (a, size = 2) =>
 export const diffs = (a) =>
   a.reduce((acc, x, i) => (i - 1 < 0 ? [] : [...acc, x - a[i - 1]]), []);
 
+export const accumulate = (a, fn = (t, elem) => (t ? t + elem : elem)) => {
+  let total;
+  let totals = [];
+  for (let i = 0; i < a.length; i++) {
+    total = fn(total, a[i]);
+    totals[i] = total;
+  }
+  return totals;
+};
+
 export const nbrs = (a, i, j, includeDiagonal = true, includeOrigin = true) => {
   let nbrs = [];
   for (const dr of [-1, 0, 1]) {
