@@ -29,4 +29,11 @@ describe('entries', () => {
       ['b', 2],
     ]);
   });
+
+  it('handles arrays and objects', () => {
+    expect(object.entries(['x', 'y'])).toEqual([
+      [0, 'x'],
+      [1, 'y'],
+    ]);
+  });
 });

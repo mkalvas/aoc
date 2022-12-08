@@ -20,6 +20,18 @@ export const arrayEquals = (a, b) =>
 export const takeEvery = (a, every = 2, offset = 0) =>
   a.filter((_, i) => (i + offset) % every === 0);
 
+export const takeWhile = (a, fn) => {
+  let filtered = [];
+  for (let i = 0; i < a.length; i++) {
+    if (fn(i, a[i], a)) {
+      filtered.push(a[i]);
+    } else {
+      return filtered;
+    }
+  }
+  return filtered;
+};
+
 export const groupEvery = (a, every) => {
   const groups = [];
   for (let i = 0; i < a.length; i += every) {
