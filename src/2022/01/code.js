@@ -1,12 +1,10 @@
 import { groupLines, nums, numSort, sum } from '../../lib';
 
-export const solutionOne = (input) =>
-  Math.max(...groupLines(input).map((g) => sum(nums(g))));
+const sortedSums = (input) =>
+  groupLines(input)
+    .map((g) => sum(nums(g)))
+    .sort(numSort)
+    .slice(-3);
 
-export const solutionTwo = (input) =>
-  sum(
-    groupLines(input)
-      .map((g) => sum(nums(g)))
-      .sort(numSort)
-      .slice(-3)
-  );
+export const solutionOne = (input) => sortedSums(input).at(-1);
+export const solutionTwo = (input) => sum(sortedSums(input));
