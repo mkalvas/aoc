@@ -1,3 +1,8 @@
+# Initial pass
+
+A little over-engineered with the rotations and stuff, but it was a useful concept to keep in mind for the slimmed down version.
+
+```js
 import { nums, product, transpose } from '../../lib';
 
 const parse = (input) => input.map((r) => nums(r.split('')));
@@ -11,7 +16,9 @@ const sides = (grid) => [
 const scanRows = (rows) =>
   rows.map((row) =>
     nums(row).reduce((acc, _, i) => {
-      if (i === 0 || row[i] > Math.max(...row.slice(0, i))) acc.push(i);
+      if (i === 0 || row[i] > Math.max(...row.slice(0, i))) {
+        acc.push(i);
+      }
       return acc;
     }, [])
   );
@@ -53,4 +60,4 @@ export const solutionTwo = (input) => {
   const grid = parse(input);
   const scores = grid.map((row, x) => row.map((_, y) => score(grid, [x, y])));
   return Math.max(...scores.flat());
-};
+```

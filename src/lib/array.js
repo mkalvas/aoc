@@ -8,6 +8,9 @@ export const count = (a, v) => a.filter((x) => x === v).length;
 export const range = (a, b) =>
   Array.from({ length: b - a + 1 }).map((_, i) => a + i);
 
+export const s2p = (s) => nums(s.split(','));
+export const p2s = (a) => `${a[0]},${a[1]}`;
+
 export const counter = (a) =>
   a.reduce((c, v) => ({ ...c, [v]: (c[v] || 0) + 1 }), {});
 
