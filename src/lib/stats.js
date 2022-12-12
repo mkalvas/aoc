@@ -1,6 +1,10 @@
 // Statistics functions
 import { numSort, sum } from './array';
 
+// for arrays, use reduce a.reduce(gcd) or a.reduce(lcm)
+export const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
+export const lcm = (a, b) => (a * b) / gcd(a, b);
+
 export const gauss = (n) => (n * (n + 1)) / 2;
 export const mean = (a) => sum(a) / a.length;
 

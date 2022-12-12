@@ -1,11 +1,11 @@
 import { solutionOne, solutionTwo } from './code';
 
 const day = {
-  label: '',
+  label: 'CRT Pixels',
   path: `${__dirname}/input.txt`,
   solutionOne,
   solutionTwo,
-  answers: [undefined, undefined],
+  answers: [12880, 'FCJAPJRE'],
 };
 
 export default day;
