@@ -1,5 +1,5 @@
 export class GridNode {
-  constructor(x, y, weight) {
+  constructor(x, y, weight, costFn, wallFn) {
     this.f = 0;
     this.g = 0;
     this.h = 0;
@@ -9,17 +9,19 @@ export class GridNode {
     this.parent = null;
     this.visited = false;
     this.weight = weight;
+    this.getCost = costFn ?? this.defaultCost;
+    this.isWall = wallFn ?? this.defaultWall;
   }
 
   toString() {
     return `[${this.x}, ${this.y}]`;
   }
 
-  isWall() {
+  defaultWall() {
     return this.weight === 0;
   }
 
-  getCost(fromNeighbor) {
+  defaultCost(fromNeighbor) {
     if (fromNeighbor && fromNeighbor.x != this.x && fromNeighbor.y != this.y) {
       return this.weight * 1.41421; // sqrt(2)
     }

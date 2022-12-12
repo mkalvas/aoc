@@ -47,7 +47,7 @@ export const search = (graph, start, end, options) => {
 
     for (let i = 0; i < neighbors.length; ++i) {
       const neighbor = neighbors[i];
-      if (neighbor.closed || neighbor.isWall()) continue;
+      if (neighbor.closed || neighbor.isWall(currentNode)) continue;
 
       // The g score is the shortest distance from start to current node.
       const gScore = currentNode.g + neighbor.getCost(currentNode);

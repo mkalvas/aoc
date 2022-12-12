@@ -1,14 +1,14 @@
 import { GridNode } from './grid-node';
 
 export class Graph {
-  constructor(gridIn, { diagonal = false } = {}) {
+  constructor(gridIn, { diagonal = false, costFn, wallFn } = {}) {
     this.grid = [];
     this.nodes = [];
     this.dirtyNodes = [];
     this.diagonal = diagonal;
-    this.grid = gridIn.map((row, x) =>
-      row.map((weight, y) => {
-        const node = new GridNode(x, y, weight);
+    this.grid = gridIn.map((row, y) =>
+      row.map((weight, x) => {
+        const node = new GridNode(x, y, weight, costFn, wallFn);
         this.nodes.push(node);
         return node;
       })
@@ -31,17 +31,8 @@ export class Graph {
   }
 
   neighbors(node) {
+    let neighbors;
     let { x, y } = node;
-    let neighbors = [
-      [x - 1, y],
-      [x + 1, y],
-      [x, y - 1],
-      [x, y + 1],
-    ].filter(
-      ([x, y]) =>
-        x >= 0 && y >= 0 && x < this.grid.length && y < this.grid[x].length
-    );
-
     if (this.diagonal) {
       neighbors = [
         ...neighbors,
@@ -52,11 +43,21 @@ export class Graph {
           [x - 1, y - 1],
         ].filter(
           ([x, y]) =>
-            x >= 0 && y >= 0 && x < this.grid.length && y < this.grid[x].length
+            y >= 0 && x >= 0 && y < this.grid.length && x < this.grid[y].length
         ),
       ];
+    } else {
+      neighbors = [
+        [x - 1, y],
+        [x + 1, y],
+        [x, y - 1],
+        [x, y + 1],
+      ].filter(
+        ([x, y]) =>
+          y >= 0 && x >= 0 && y < this.grid.length && x < this.grid[y].length
+      );
     }
 
-    return neighbors.map(([x, y]) => this.grid[x][y]);
+    return neighbors.map(([x, y]) => this.grid[y][x]);
   }
 }
