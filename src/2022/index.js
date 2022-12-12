@@ -6,8 +6,8 @@ import day05 from './05';
 import day06 from './06';
 import day07 from './07';
 import day08 from './08';
-// import day09 from './09';
-// import day10 from './10';
+import day09 from './09';
+import day10 from './10';
 // import day11 from './11';
 // import day12 from './12';
 // import day13 from './13';
@@ -33,8 +33,8 @@ export default {
   6: day06,
   7: day07,
   8: day08,
-  // 9: day09,
-  // 10: day10,
+  9: day09,
+  10: day10,
   // 11: day11,
   // 12: day12,
   // 13: day13,
