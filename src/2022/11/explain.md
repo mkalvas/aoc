@@ -29,4 +29,6 @@ round 2 = 0
 
 For this simple example, you can see it just keeps flipping and repeating, but for something a little different, you can see that we're keeping the relevant information around because addition and multiplication (the only two operations in the input) are [congruent](https://en.wikipedia.org/wiki/Congruence_relation).
 
-Moreover, if we have multiple divisors (for all monkeys as a set), then we need to use the least common multiple of all the divisors to ensure that no information is lost even when passing the item to a different monkey.
+Moreover, if we have multiple divisors (for all monkeys as a set), then we need to use the least common multiple of all the divisors to ensure that no information is lost even when passing the item to a different monkey. (We could also use the product of all the divisors which is obviously a common multiple, but that might be large, even though in this puzzle it's not too large).
+
+Another option would be for us to store the "worry value" as an array of numbers _per monkey_ in order to keep track of its relation to that monkey's modulus. This is probably a bit more tedious code-wise.

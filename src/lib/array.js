@@ -1,4 +1,8 @@
 // Array functions
+export const isArr = (a) => Array.isArray(a);
+export const clone = (a) => structuredClone(a);
+export const cut = (a, i) => [...a.slice(0, i), ...a.slice(i + 1)];
+export const exists = (a) => a.filter(Boolean);
 export const product = (a) => a.reduce((p, n) => p * n, 1);
 export const sum = (a) => a.reduce((s, n) => s + n, 0);
 export const nums = (a) => a.map(Number);
