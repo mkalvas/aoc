@@ -27,18 +27,19 @@ export class BinaryHeap {
     return result;
   }
 
-  remove(node) {
-    const i = this.content.indexOf(node);
-    const end = this.content.pop();
-    if (i !== this.content.length - 1) {
-      this.content[i] = end;
-      if (this.scoreFunction(end) < this.scoreFunction(node)) {
-        this.sinkDown(i);
-      } else {
-        this.bubbleUp(i);
-      }
-    }
-  }
+  // haven't needed this so far
+  // remove(node) {
+  //   const i = this.content.indexOf(node);
+  //   const end = this.content.pop();
+  //   if (i !== this.content.length - 1) {
+  //     this.content[i] = end;
+  //     if (this.scoreFunction(end) < this.scoreFunction(node)) {
+  //       this.sinkDown(i);
+  //     } else {
+  //       this.bubbleUp(i);
+  //     }
+  //   }
+  // }
 
   sinkDown(n) {
     const element = this.content[n];

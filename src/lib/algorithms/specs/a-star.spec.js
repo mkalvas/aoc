@@ -9,6 +9,12 @@ const WEIGHTS = [
   [1, 1, 1, 1, 1],
 ];
 
+const WEIGHTS_STRING = `1.00 1.00 1.00 1.00 0.00
+1.00 0.00 0.00 0.00 1.00
+1.00 0.00 1.00 0.00 0.00
+1.00 0.00 0.00 0.00 0.00
+1.00 1.00 1.00 1.00 1.00`;
+
 const WEIGHTS_VARIABLE = [
   [1, 1, 1],
   [1, 30, 1],
@@ -16,6 +22,13 @@ const WEIGHTS_VARIABLE = [
 ];
 
 describe('A*', () => {
+  describe('logging', () => {
+    it('outputs a string grid for logging purposes', () => {
+      const graph = new Graph(WEIGHTS);
+      expect(graph.toString()).toBe(WEIGHTS_STRING);
+    });
+  });
+
   describe('when diagonal paths are not allowed', () => {
     const graph = new Graph(WEIGHTS, { diagonal: false });
 
@@ -32,7 +45,7 @@ describe('A*', () => {
     it('finds a path that can be reached by manhattan travel', () => {
       const result = search(graph, graph.grid[0][0], graph.grid[4][4]);
       expect(result.join(', ')).toBe(
-        '[1, 0], [2, 0], [3, 0], [4, 0], [4, 1], [4, 2], [4, 3], [4, 4]'
+        '[0, 1], [0, 2], [0, 3], [0, 4], [1, 4], [2, 4], [3, 4], [4, 4]'
       );
     });
 
@@ -56,7 +69,7 @@ describe('A*', () => {
           closest: true,
         });
         expect(result.join(', ')).toBe(
-          '[1, 0], [2, 0], [3, 0], [4, 0], [4, 1], [4, 2], [4, 3], [4, 4]'
+          '[0, 1], [0, 2], [0, 3], [0, 4], [1, 4], [2, 4], [3, 4], [4, 4]'
         );
       });
     });
@@ -84,7 +97,7 @@ describe('A*', () => {
         heuristic: 'diagonal',
       });
       expect(result.join(', ')).toBe(
-        '[1, 0], [2, 0], [3, 0], [4, 1], [4, 2], [4, 3], [4, 4]'
+        '[0, 1], [0, 2], [0, 3], [1, 4], [2, 4], [3, 4], [4, 4]'
       );
     });
 
@@ -92,7 +105,7 @@ describe('A*', () => {
       const result = search(graph, graph.grid[0][0], graph.grid[1][4], {
         heuristic: 'diagonal',
       });
-      expect(result.join(', ')).toBe('[0, 1], [0, 2], [0, 3], [1, 4]');
+      expect(result.join(', ')).toBe('[1, 0], [2, 0], [3, 0], [4, 1]');
     });
 
     describe('with a strongly weighted graph', () => {
@@ -109,7 +122,7 @@ describe('A*', () => {
           heuristic: 'diagonal',
           closest: true,
         });
-        expect(result.join(', ')).toBe('[0, 1], [0, 2], [0, 3], [1, 4]');
+        expect(result.join(', ')).toBe('[1, 0], [2, 0], [3, 0], [4, 1]');
       });
     });
   });

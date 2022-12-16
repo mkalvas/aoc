@@ -1,9 +1,18 @@
 // String functions
-export const reverse = (s) => s.split('').reverse().join('');
 export const b2d = (b) => parseInt(b, 2);
 export const d2b = (i) => i.toString(2);
+
 export const h2d = (h) => parseInt(h, 16);
 export const d2h = (i) => i.toString(16);
-export const ord = (c) => c.charCodeAt();
+
+export const p2s = (a) => `${a[0]},${a[1]}`;
+export const s2p = (s) => s.split(',').map(Number);
+
 export const lower = (s) => s.toLowerCase();
+export const ord = (c) => c.charCodeAt();
 export const upper = (s) => s.toUpperCase();
+
+export const reverse = (v) => {
+  if (Array.isArray(v)) return v.reverse();
+  return v.split('').reverse().join('');
+};

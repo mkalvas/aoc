@@ -1,6 +1,6 @@
 import { execSync } from 'child_process';
 import { performance } from 'perf_hooks';
-import { getFileLines } from './files';
+import { getFileLines } from './functions';
 import days2015 from '../2015';
 import days2020 from '../2020';
 import days2021 from '../2021';

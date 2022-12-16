@@ -1,12 +1,11 @@
-import md5, { WordArray } from 'crypto-js/md5';
+import { md5 } from '../../lib';
 
-const bruteForce = (input, match) => {
+export const bruteForce = (input, match) => {
   let i = -1;
   let hash = '';
   while (!hash.startsWith(match)) {
     i++;
-    hash = md5(`${input[0]}${i}`).toString();
-    WordArray;
+    hash = md5(`${input[0]}${i}`);
   }
   return i;
 };

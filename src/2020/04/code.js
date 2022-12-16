@@ -9,7 +9,6 @@ const validNumberRange = (min, max) => (passport, key) => {
 
 const validHeight = (passport, key) => {
   const units = passport[key].slice(-2);
-  const value = passport[key].slice(0, -2);
   if (units === 'cm') return validNumberRange(150, 193)(passport, key);
   if (units === 'in') return validNumberRange(59, 76)(passport, key);
   return false;

@@ -20,6 +20,12 @@ I'm going back and doing the 2015 year during the summer of 2022. I'm going to a
 
 December 2022 is upon us. You know the drill by now. JS as the main language, maybe some others sprinkled in here and there, and the annual [blog post](https://mkalvas.com/blog/aoc-2022).
 
+## A note on `/lib` and the solution code
+
+Over the course of doing these puzzles, I've come up a standard library of helper functions. These are things that are either verbose or common enough to warrant a well defined and tested function.
+
+I'm experimenting with including both a functional and prototype extension version of most of these functions so that they can be used easily in any circumstance. Some of these are not direct translations from one paradigm to the other though. Also, extending base JS is a pretty standard anti-pattern that I'm well aware of. **Use at your own risk, don't use anything in this repo as an example of good production code**.
+
 ## Organization
 
 The solutions are in the [`./src`](src) folder organized by year and day. To simplify setup, testing, and running, all the days adhere to a template structure.

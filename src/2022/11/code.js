@@ -1,7 +1,7 @@
-import { groupLines, lcm, nums, product } from '../../lib';
+import { groupLines, nums } from '../../lib';
 
 class Monkey {
-  constructor(lines, relaxFn = () => {}) {
+  constructor(lines, relaxFn) {
     this.inspected = 0;
     this.items = nums(lines[1].split(': ')[1].split(', '));
     this.op = lines[2].split('= ')[1];
@@ -23,10 +23,12 @@ class Monkey {
   };
 }
 
-const score = (monkeys) => {
-  const topTwo = monkeys.sort((a, b) => a.inspected - b.inspected).slice(-2);
-  return product(topTwo.map((m) => m.inspected));
-};
+const score = (monkeys) =>
+  monkeys
+    .sort((a, b) => a.inspected - b.inspected)
+    .slice(-2)
+    .map((m) => m.inspected)
+    .product();
 
 const play = (monkeys, rounds) => {
   for (let round = 0; round < rounds; round++)
@@ -36,13 +38,13 @@ const play = (monkeys, rounds) => {
 
 export const solutionOne = (input) => {
   const relax = (worry) => Math.floor(worry / 3);
-  const monkeys = groupLines(input).map((g) => new Monkey(g, relax));
+  const monkeys = input.groupLines().map((g) => new Monkey(g, relax));
   return play(monkeys, 20);
 };
 
 export const solutionTwo = (input) => {
-  const monkeys = groupLines(input).map((g) => new Monkey(g));
-  const modulus = monkeys.map((m) => m.divisor).reduce(lcm);
+  const monkeys = input.groupLines().map((g) => new Monkey(g));
+  const modulus = monkeys.map((m) => m.divisor).lcm();
   const relax = (worry) => worry % modulus;
   monkeys.forEach((m) => (m.relaxFn = relax));
   return play(monkeys, 10000);

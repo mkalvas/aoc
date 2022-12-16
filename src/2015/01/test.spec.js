@@ -15,7 +15,7 @@ const INPUTS_ONE = [
 const INPUTS_TWO = [')', '()())'];
 
 describe('puzzle one', () => {
-  it('', () => {
+  it('Finds the floor that santa ends up on', () => {
     expect(solutionOne(INPUTS_ONE.slice(0, 1))).toEqual(0);
     expect(solutionOne(INPUTS_ONE.slice(1, 2))).toEqual(0);
     expect(solutionOne(INPUTS_ONE.slice(2, 3))).toEqual(3);
@@ -29,8 +29,12 @@ describe('puzzle one', () => {
 });
 
 describe('puzzle two', () => {
-  it('', () => {
+  it('Finds the character that causes santa to enter the basement', () => {
     expect(solutionTwo(INPUTS_TWO.slice(0, 1))).toEqual(1);
     expect(solutionTwo(INPUTS_TWO.slice(1, 2))).toEqual(5);
+  });
+
+  it('Throws if santa never enters the basement', () => {
+    expect(() => solutionTwo([''])).toThrow();
   });
 });

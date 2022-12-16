@@ -33,6 +33,15 @@ export class Graph {
   neighbors(node) {
     let neighbors;
     let { x, y } = node;
+    neighbors = [
+      [x - 1, y],
+      [x + 1, y],
+      [x, y - 1],
+      [x, y + 1],
+    ].filter(
+      ([x, y]) =>
+        y >= 0 && x >= 0 && y < this.grid.length && x < this.grid[y].length
+    );
     if (this.diagonal) {
       neighbors = [
         ...neighbors,
@@ -46,16 +55,6 @@ export class Graph {
             y >= 0 && x >= 0 && y < this.grid.length && x < this.grid[y].length
         ),
       ];
-    } else {
-      neighbors = [
-        [x - 1, y],
-        [x + 1, y],
-        [x, y - 1],
-        [x, y + 1],
-      ].filter(
-        ([x, y]) =>
-          y >= 0 && x >= 0 && y < this.grid.length && x < this.grid[y].length
-      );
     }
 
     return neighbors.map(([x, y]) => this.grid[y][x]);

@@ -1,7 +1,7 @@
-import { cons, entries } from '../../lib';
+import '../../lib/extensions';
 
 const find = (stream, size) => {
-  for (let [i, window] of entries(cons(stream, size))) {
+  for (let [i, window] of stream.cons(size).entries()) {
     if (new Set(window).size === size) return i + size;
   }
 };

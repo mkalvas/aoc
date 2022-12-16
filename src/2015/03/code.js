@@ -1,10 +1,10 @@
 import { sum, takeEvery, union, zip } from '../../lib';
 
-const vectorize = (dir) => {
-  if (dir === '^') return [0, 1];
-  if (dir === '>') return [1, 0];
-  if (dir === 'v') return [0, -1];
-  if (dir === '<') return [-1, 0];
+const DIRS = {
+  '^': [0, 1],
+  '>': [1, 0],
+  v: [0, -1],
+  '<': [-1, 0],
 };
 
 const walkRoute = (vectors) => {
@@ -18,10 +18,10 @@ const walkRoute = (vectors) => {
 };
 
 export const solutionOne = (input) =>
-  walkRoute(input[0].split('').map(vectorize)).size;
+  walkRoute(input[0].split('').map((i) => DIRS[i])).size;
 
 export const solutionTwo = (input) => {
-  const vectors = input[0].split('').map(vectorize);
+  const vectors = input[0].split('').map((i) => DIRS[i]);
   const santa = walkRoute(takeEvery(vectors, 2, 0));
   const robot = walkRoute(takeEvery(vectors, 2, 1));
   return union(santa, robot).size;

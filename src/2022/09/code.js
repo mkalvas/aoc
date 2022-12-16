@@ -1,4 +1,4 @@
-import { entries, nbrs, s2p, p2s, range, distSq } from '../../lib';
+import { nbrs, s2p, p2s, range, distSq } from '../../lib';
 
 const DELTAS = { R: [1, 0], L: [-1, 0], U: [0, -1], D: [0, 1] };
 
@@ -14,7 +14,8 @@ const moveTail = (state) => {
   const hn = nbrs(grid(state.h), 1, 1).map((n) => p2s(n[0]));
   if (hn.includes(p2s(state.t))) return state;
 
-  state.t = nbrs(grid(state.t), 1, 1)
+  state.t = grid(state.t)
+    .nbrs(1, 1)
     .map((n) => p2s(n[0]))
     .filter((p) => hn.includes(p))
     .reduce(
@@ -50,7 +51,7 @@ export const solutionOne = (input) =>
 export const solutionTwo = (input) => {
   const moves = input.map(parseMove).flat();
   const states = new Array(9).fill().map(startingState);
-  for (let [step, move] of entries(moves)) {
+  for (let [step, move] of moves.entries()) {
     states[0] = walk(states[0], move, step);
     for (let i = 1; i < 9; i++) {
       states[i].h = states[i - 1].t;

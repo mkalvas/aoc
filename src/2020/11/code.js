@@ -59,7 +59,7 @@ export const runGame = (seatMap, config) => {
 };
 
 export const solution = (config) => (map) =>
-  (runGame(map, config).flat().join('').match(/#/g) || []).length;
+  runGame(map, config).flat().join('').match(/#/g).length;
 
 export const GAME_CONFIG_ONE = {
   cell: null,

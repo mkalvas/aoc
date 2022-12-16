@@ -1,4 +1,4 @@
-import { clone, exists, groupLines, isArr, product, sum } from '../../lib';
+import { groupLines, isArr, product, truthy } from '../../lib';
 
 const isOrdered = (left, right) => {
   if (left.length === 0 && right.length !== 0) return true;
@@ -18,16 +18,15 @@ const isOrdered = (left, right) => {
 };
 
 export const solutionOne = (input) =>
-  sum(
-    groupLines(input)
-      .map((g) => g.map(eval))
-      .map((p, i) => (isOrdered(...p) ? i + 1 : 0))
-  );
+  groupLines(input)
+    .map((g) => g.map(eval))
+    .map((p, i) => (isOrdered(...p) ? i + 1 : 0))
+    .sum();
 
 export const solutionTwo = (input) => {
   const trimmed = [...input].filter(Boolean).map(eval);
   return product([
-    exists(clone(trimmed).map((l) => isOrdered(l, [[2]]))).length + 1,
-    exists(clone(trimmed).map((l) => isOrdered(l, [[6]]))).length + 2,
+    truthy(trimmed.clone().map((l) => isOrdered(l, [[2]]))).length + 1,
+    truthy(trimmed.clone().map((l) => isOrdered(l, [[6]]))).length + 2,
   ]);
 };

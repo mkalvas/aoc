@@ -1,4 +1,4 @@
-import { sum } from '../../lib';
+import '../../lib/extensions';
 
 const MAP = { A: 1, B: 2, C: 3, X: 1, Y: 2, Z: 3 };
 const parse1 = (l) => l.split(' ').map((x) => MAP[x]);
@@ -17,5 +17,5 @@ const play = ([opp, me]) => {
   return me;
 };
 
-export const solutionOne = (input) => sum(input.map(parse1).map(play));
-export const solutionTwo = (input) => sum(input.map(parse2).map(play));
+export const solutionOne = (input) => input.map(parse1).map(play).sum();
+export const solutionTwo = (input) => input.map(parse2).map(play).sum();

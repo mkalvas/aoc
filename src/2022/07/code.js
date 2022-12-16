@@ -21,9 +21,13 @@ const getFileSizes = (input) => {
 };
 
 export const solutionOne = (input) =>
-  sum(vals(getFileSizes(input)).filter((v) => v <= 100_000));
+  vals(getFileSizes(input))
+    .filter((v) => v <= 100_000)
+    .sum();
 
 export const solutionTwo = (input) => {
   const dirs = getFileSizes(input);
-  return Math.min(...vals(dirs).filter((v) => v >= dirs['/'] - 40_000_000));
+  return vals(dirs)
+    .filter((v) => v >= dirs['/'] - 40_000_000)
+    .min();
 };

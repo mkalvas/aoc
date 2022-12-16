@@ -1,4 +1,4 @@
-import { solutionOne, solutionTwo } from './code';
+import { bruteForce, solutionOne, solutionTwo } from './code';
 
 const INPUT = ['abcdef', 'pqrstuv', 'bgvyzdsv'];
 
@@ -11,7 +11,13 @@ describe('puzzle one', () => {
 });
 
 describe('puzzle two', () => {
-  it('', () => {
+  it('Computes the lowest number for a hash with 6 leading zeros', () => {
     expect(solutionTwo(INPUT[2])).toEqual(1038736);
+  });
+});
+
+describe('bruteForce', () => {
+  it('Computes the lowest number for a hash with 1 leading zero', () => {
+    expect(bruteForce('a', '0')).toBe(27);
   });
 });

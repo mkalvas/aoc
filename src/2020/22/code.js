@@ -1,4 +1,4 @@
-import { arrayEquals, groupLines, nums } from '../../lib';
+import { arrEq, groupLines, nums } from '../../lib';
 
 const parsePlayerDecks = (input) =>
   groupLines(input).map((player) => nums(player.slice(1)));
@@ -21,7 +21,7 @@ const combat = ([p1, p2]) => {
 
 const gameInStack = (stack, [p1, p2]) => {
   for (const [s1, s2] of stack) {
-    if (arrayEquals(s1, p1) && arrayEquals(s2, p2)) return true;
+    if (arrEq(s1, p1) && arrEq(s2, p2)) return true;
   }
   return false;
 };

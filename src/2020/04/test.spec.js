@@ -31,6 +31,9 @@ const INVALID_PASSPORTS = [
   'hgt:59cm ecl:zzz',
   'eyr:2038 hcl:74454a iyr:2023',
   'pid:3556412378 byr:2007',
+  '',
+  'pid:087499704 hgt:74badunit ecl:grn iyr:2012 eyr:2030 byr:1980',
+  'hcl:#623a2f',
 ];
 
 const VALID_PASSPORTS = [

@@ -38,5 +38,4 @@ const getPaths = function* (input) {
 };
 
 export const solutionOne = (input) => getPaths(input).next().value;
-export const solutionTwo = (input) =>
-  Math.min(...[...getPaths(input)].filter(Boolean));
+export const solutionTwo = (input) => [...getPaths(input)].truthy().min();

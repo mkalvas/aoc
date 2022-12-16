@@ -14,6 +14,7 @@
     "build": "babel src --out-dir build --copy-files",
     "build:watch": "babel src --watch --out-dir build --copy-files",
     "test": "jest",
+    "test:e2e": "jest --testPathIgnorePatterns /bin /build /node_modules/",
     "clean": "rm -rf build",
     "dev": "npm run clean && npm run build:watch",
     "start": "node bin/aoc.js run",
@@ -21,7 +22,6 @@
   },
   "dependencies": {
     "chokidar": "^3.5.2",
-    "crypto-js": "^4.1.1",
     "terser": "^5.10.0",
     "yargs": "^17.2.1"
   },

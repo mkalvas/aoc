@@ -1,17 +1,17 @@
-import { nums, product, transpose } from '../../lib';
+import { product, reverse } from '../../lib';
 
-const parse = (input) => input.map((r) => nums(r.split('')));
+const parse = (input) => input.map((r) => r.split('').nums());
 const sides = (grid) => [
   grid,
-  [...grid].map((r) => r.reverse()),
-  transpose([...grid]),
-  transpose([...grid]).map((r) => r.reverse()),
+  [...grid].map(reverse),
+  [...grid].transpose(),
+  [...grid].transpose().map(reverse),
 ];
 
 const scanRows = (rows) =>
   rows.map((row) =>
-    nums(row).reduce((acc, _, i) => {
-      if (i === 0 || row[i] > Math.max(...row.slice(0, i))) acc.push(i);
+    row.nums().reduce((acc, _, i) => {
+      if (i === 0 || row[i] > row.slice(0, i).max()) acc.push(i);
       return acc;
     }, [])
   );
@@ -51,6 +51,8 @@ export const solutionOne = (input) => {
 
 export const solutionTwo = (input) => {
   const grid = parse(input);
-  const scores = grid.map((row, x) => row.map((_, y) => score(grid, [x, y])));
-  return Math.max(...scores.flat());
+  return grid
+    .map((row, x) => row.map((_, y) => score(grid, [x, y])))
+    .flat()
+    .max();
 };
