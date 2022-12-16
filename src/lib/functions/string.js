@@ -1,4 +1,8 @@
 // String functions
+export const FULL = '█';
+export const EMPT = ' ';
+export const HALF = '·';
+
 export const b2d = (b) => parseInt(b, 2);
 export const d2b = (i) => i.toString(2);
 
