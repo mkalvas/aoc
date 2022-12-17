@@ -10,8 +10,10 @@ import { EMPT } from './string';
 //  like the array methods or w/e too.
 
 // n-dimensional euclidean distance fn([x1, y1, z1, ...], [x2, y2, z2, ...])
-export const distSq = (a, b) => a.reduce((s, ai, i) => s + (b[i] - ai) ** 2, 0);
 export const dist = (a, b) => Math.sqrt(distSq(a, b));
+export const distSq = (a, b) => a.reduce((s, ai, i) => s + (b[i] - ai) ** 2, 0);
+export const cityDist = (a, b) =>
+  a.reduce((s, ai, i) => s + Math.abs(b[i] - ai), 0);
 
 export const gridSum = (grid) => sum(grid.map((r) => sum(r)));
 export const g2s = (grid, padding = 0, padChar = ' ') =>

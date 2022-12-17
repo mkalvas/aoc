@@ -13,8 +13,8 @@
   "scripts": {
     "build": "babel src --out-dir build --copy-files",
     "build:watch": "babel src --watch --out-dir build --copy-files",
+    "ee": "jest --testPathIgnorePatterns /bin /build /node_modules/",
     "test": "jest",
-    "test:e2e": "jest --testPathIgnorePatterns /bin /build /node_modules/",
     "clean": "rm -rf build",
     "dev": "npm run clean && npm run build:watch",
     "start": "node bin/aoc.js run",
