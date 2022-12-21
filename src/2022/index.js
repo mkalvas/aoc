@@ -13,7 +13,7 @@ import day12 from './12';
 import day13 from './13';
 import day14 from './14';
 import day15 from './15';
-// import day16 from './16';
+import day16 from './16';
 // import day17 from './17';
 // import day18 from './18';
 // import day19 from './19';
@@ -40,7 +40,7 @@ export default {
   13: day13,
   14: day14,
   15: day15,
-  // 16: day16,
+  16: day16,
   // 17: day17,
   // 18: day18,
   // 19: day19,

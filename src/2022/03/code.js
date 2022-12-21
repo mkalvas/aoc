@@ -1,4 +1,4 @@
-import { lower, ord, sum, groupEvery } from '../../lib';
+import { lower, ord, groupEvery } from '../../lib';
 
 const LOWER = 'a'.charCodeAt() - 1;
 const UPPER = 'A'.charCodeAt() - 27;
