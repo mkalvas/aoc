@@ -1,5 +1,3 @@
-mod lib;
-
 #[path = "./2021/mod.rs"]
 mod year_2021;
 

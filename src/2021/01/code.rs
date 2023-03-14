@@ -1,4 +1,4 @@
-use crate::lib::nums;
+use aoc::nums;
 
 fn inc(rs: Vec<i32>, x: usize) -> i32 {
     rs.iter()
