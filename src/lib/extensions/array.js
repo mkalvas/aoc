@@ -26,6 +26,10 @@ Array.prototype.clone = function () {
   return copy;
 };
 
+Array.prototype.combinations = function () {
+  return this.flatMap((v, i) => this.slice(i + 1).map((w) => [v, w]));
+};
+
 Array.prototype.cons = function (size = 2) {
   return Array.from({ length: this.length - size + 1 }, (_, i) =>
     this.slice(i, i + size)
@@ -118,27 +122,31 @@ Array.prototype.min = function () {
 };
 
 Array.prototype.nbrs = function (
-  i,
-  j,
+  y,
+  x,
   includeDiagonal = true,
-  includeOrigin = true
+  includeOrigin = true,
+  includeOutOfBounds = false,
+  outOfBoundsDefault = 0
 ) {
   let nbrs = [];
   for (const dr of [-1, 0, 1]) {
     for (const dc of [-1, 0, 1]) {
-      const r = i + dr;
-      const c = j + dc;
+      const r = y + dr;
+      const c = x + dc;
       const isDiagonal = Math.abs(dr) === Math.abs(dc) && dr !== 0 && dc !== 0;
       const isOrigin = dr === 0 && dc === 0;
+      const isOob = r < 0 || c < 0 || r >= this.length || c >= this[y].length;
       if (
-        r >= 0 &&
-        c >= 0 &&
-        r < this.length &&
-        c < this[i].length &&
+        (includeOutOfBounds || !isOob) &&
         (includeDiagonal || !isDiagonal) &&
         (includeOrigin || !isOrigin)
       ) {
-        nbrs.push([this[r][c], r, c]);
+        if (isOob) {
+          nbrs.push([outOfBoundsDefault, r, c]);
+        } else {
+          nbrs.push([this[r][c], r, c]);
+        }
       }
     }
   }

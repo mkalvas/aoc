@@ -16,6 +16,14 @@ describe('accumulate', () => {
   });
 });
 
+describe('aofl', () => {
+  it('returns an array with given length and values', () => {
+    expect(array.aofl(0)).toEqual([]);
+    expect(array.aofl(2)).toEqual([undefined, undefined]);
+    expect(array.aofl(5, 'a')).toEqual(['a', 'a', 'a', 'a', 'a']);
+  });
+});
+
 describe('asc', () => {
   it('sorts the array numerically ascending', () => {
     expect(array.asc([1, 10, 2, 20])).toEqual([1, 2, 10, 20]);
@@ -37,6 +45,16 @@ describe('clone', () => {
     a[1].pop();
     expect(a).toEqual([1, [], 3]);
     expect(b).toEqual([1, [2], 3]);
+  });
+});
+
+describe('combinations', () => {
+  it('returns the combinations of elements in an array', () => {
+    expect(array.combinations([1, 2, 3])).toEqual([
+      [1, 2],
+      [1, 3],
+      [2, 3],
+    ]);
   });
 });
 
@@ -159,6 +177,20 @@ describe('nbrs', () => {
       ['d', 3, 1],
       ['f', 3, 3],
       ['h', 4, 2],
+    ]);
+  });
+
+  it('returns the neighbors with out of bounds elements', () => {
+    expect(array.nbrs([[1]], 0, 0, true, true, true, 0)).toEqual([
+      [0, -1, -1],
+      [0, -1, 0],
+      [0, -1, 1],
+      [0, 0, -1],
+      [1, 0, 0],
+      [0, 0, 1],
+      [0, 1, -1],
+      [0, 1, 0],
+      [0, 1, 1],
     ]);
   });
 });

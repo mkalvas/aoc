@@ -6,9 +6,42 @@ describe('g2s', () => {
   });
 });
 
-describe('gridSum', () => {
-  it('sums a grid of numbers', () => {
-    expect(grid.gridSum([[1], [2], [3]])).toBe(6);
+describe('gridMap', () => {
+  it('maps a function to a 2d grid', () => {
+    const ex = [
+      [1, 2],
+      [3, 4],
+    ];
+    expect(grid.gridMap(ex, (v, r, c) => [v ** 2, [c, r]])).toEqual([
+      [
+        [1, [0, 0]],
+        [4, [1, 0]],
+      ],
+      [
+        [9, [0, 1]],
+        [16, [1, 1]],
+      ],
+    ]);
+  });
+});
+
+describe('gridEach', () => {
+  it('performs a function for each element in a 2d grid', () => {
+    let ex = [
+      [1, 2],
+      [3, 4],
+    ];
+    grid.gridEach(ex, (v, r, c) => (ex[r][c] = [v ** 2, [c, r]]));
+    expect(ex).toEqual([
+      [
+        [1, [0, 0]],
+        [4, [1, 0]],
+      ],
+      [
+        [9, [0, 1]],
+        [16, [1, 1]],
+      ],
+    ]);
   });
 });
 
