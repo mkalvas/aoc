@@ -2,6 +2,7 @@ export * from './array';
 export * from './crypto';
 export * from './files';
 export * from './grid';
+export * from './number';
 export * from './object';
 export * from './set';
 export * from './stats';

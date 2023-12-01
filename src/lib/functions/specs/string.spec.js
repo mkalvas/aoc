@@ -1,5 +1,12 @@
 import * as str from '../string';
 
+describe('chars', () => {
+  it('returns an array of chars', () => {
+    expect(str.chars('')).toEqual([]);
+    expect(str.chars('123')).toEqual(['1', '2', '3']);
+  });
+});
+
 describe('b2d', () => {
   it('returns a decimal representation of a binary string', () => {
     expect(str.b2d('111')).toBe(7);

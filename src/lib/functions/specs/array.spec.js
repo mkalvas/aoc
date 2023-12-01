@@ -296,3 +296,55 @@ describe('zip', () => {
     ]);
   });
 });
+
+describe('runion', () => {
+  it('combines ranges', () => {
+    expect(array.runion([0, 1], [2, 3])).toEqual([
+      [0, 1],
+      [2, 3],
+    ]);
+    expect(array.runion([2, 3], [0, 1])).toEqual([
+      [2, 3],
+      [0, 1],
+    ]);
+    expect(array.runion([0, 1], [1, 5])).toEqual([[0, 5]]);
+    expect(array.runion([0, 2], [1, 5])).toEqual([[0, 5]]);
+    expect(array.runion([0, 5], [1, 5])).toEqual([[0, 5]]);
+    expect(array.runion([0, 6], [1, 5])).toEqual([[0, 6]]);
+    expect(array.runion([1, 6], [1, 5])).toEqual([[1, 6]]);
+    expect(array.runion([2, 6], [1, 5])).toEqual([[1, 6]]);
+    expect(array.runion([5, 6], [1, 5])).toEqual([[1, 6]]);
+    expect(array.runion([1, 2], [1, 5])).toEqual([[1, 5]]);
+    expect(array.runion([3, 4], [1, 5])).toEqual([[1, 5]]);
+    expect(array.runion([4, 5], [1, 5])).toEqual([[1, 5]]);
+    expect(array.runion([1, 5], [1, 2])).toEqual([[1, 5]]);
+    expect(array.runion([1, 5], [3, 4])).toEqual([[1, 5]]);
+    expect(array.runion([1, 5], [4, 5])).toEqual([[1, 5]]);
+  });
+});
+
+describe('rdiff', () => {
+  it('combines ranges', () => {
+    expect(array.rdiff([0, 6], [1, 5])).toEqual([
+      [0, 0],
+      [6, 6],
+    ]);
+    expect(array.rdiff([1, 5], [3, 4])).toEqual([
+      [1, 2],
+      [5, 5],
+    ]);
+    expect(array.rdiff([0, 1], [2, 3])).toEqual([[0, 1]]);
+    expect(array.rdiff([2, 3], [0, 1])).toEqual([[2, 3]]);
+    expect(array.rdiff([0, 2], [2, 5])).toEqual([[0, 1]]);
+    expect(array.rdiff([0, 3], [2, 5])).toEqual([[0, 1]]);
+    expect(array.rdiff([0, 5], [2, 5])).toEqual([[0, 1]]);
+    expect(array.rdiff([1, 6], [1, 5])).toEqual([[6, 6]]);
+    expect(array.rdiff([2, 6], [1, 5])).toEqual([[6, 6]]);
+    expect(array.rdiff([5, 6], [1, 5])).toEqual([[6, 6]]);
+    expect(array.rdiff([1, 2], [1, 5])).toEqual([]);
+    expect(array.rdiff([3, 4], [1, 5])).toEqual([]);
+    expect(array.rdiff([4, 5], [1, 5])).toEqual([]);
+    expect(array.rdiff([1, 5], [1, 2])).toEqual([[3, 5]]);
+    expect(array.rdiff([1, 5], [4, 5])).toEqual([[1, 3]]);
+  });
+});

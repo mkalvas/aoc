@@ -31,3 +31,57 @@ export const numSort = (a, b) => a - b;
 export const range = (a, b) =>
   Array.from({ length: b - a + 1 }).map((_, i) => a + i);
 export const aofl = (length, v = undefined) => Array.from({ length }).fill(v);
+
+// requires increasing ranges
+export const runion = ([s1, e1], [s2, e2]) => {
+  //    |-1-| |-2-| s1-e1, s2-e2
+  // or |-2-| |-1-|
+  if (e1 < s2 || e2 < s1)
+    return [
+      [s1, e1],
+      [s2, e2],
+    ];
+
+  // |-1-|-|-| s1-e2
+  //     |-2-|
+  if (s1 <= s2 && e1 <= e2) return [[s1, e2]];
+
+  // |-|-1-|-| s1-e1
+  //   |-2-|
+  if (s1 <= s2 && e2 <= e1) return [[s1, e1]];
+
+  // |-|-|-1-| s2-e1
+  // |-2-|
+  if (s2 <= s1 && e2 <= e1) return [[s2, e1]];
+
+  //   |-1-|   s2-e2
+  // |-|-2-|-|
+  if (s2 <= s1 && e1 <= e2) return [[s2, e2]];
+};
+
+// requires increasing ranges and integer step
+export const rdiff = ([s1, e1], [s2, e2]) => {
+  //    |-1-| |-2-|
+  // or |-2-| |-1-|
+  if (e1 < s2 || e2 < s1) return [[s1, e1]];
+
+  // |-1-|-|-| s1–(s2-1)
+  //     |-2-|
+  if (s1 < s2 && e1 <= e2) return [[s1, s2 - 1]];
+
+  // |-|-|-1-| s2-e1
+  // |-2-|
+  if (s2 <= s1 && e2 < e1) return [[e2 + 1, e1]];
+
+  // |-|-1-|-| s1-(s2-1), (e2+1)-e1
+  //   |-2-|
+  if (s1 <= s2 && e2 <= e1)
+    return [
+      [s1, s2 - 1],
+      [e2 + 1, e1],
+    ];
+
+  //   |-1-|   empty
+  // |-|-2-|-|
+  if (s2 <= s1 && e1 <= e2) return [];
+};
