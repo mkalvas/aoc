@@ -1,4 +1,3 @@
-import fs from 'fs';
 import { nums, sum } from '../../lib';
 
 const s2n = [
