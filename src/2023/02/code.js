@@ -4,7 +4,7 @@ const parseLine = (line) => {
   const parts = line.split(':');
   return {
     id: +parts[0].split(' ')[1],
-    sets: parts[1].split(';').map((s) => s.split(',').map((s) => s.trim())),
+    draws: parts[1].split(';').flatMap((s) => s.split(',')),
   };
 };
 
@@ -13,21 +13,15 @@ const validate = ([counter, id]) =>
 
 const counts = (game) => {
   let counter = { red: 0, green: 0, blue: 0 };
-  for (let set of game.sets) {
-    for (let draw of set) {
-      const [count, color] = draw.split(' ');
-      counter[color] = Math.max(counter[color], count);
-    }
+  for (let draw of game.draws) {
+    const [count, color] = draw.trim().split(' ');
+    counter[color] = Math.max(counter[color], count);
   }
   return [counter, game.id];
 };
 
 export const solutionOne = (input) =>
-  input.map(parseLine).map(counts).map(validate).sum();
+  input.map((l) => validate(counts(parseLine(l)))).sum();
 
 export const solutionTwo = (input) =>
-  input
-    .map(parseLine)
-    .map(counts)
-    .map(([c]) => Object.values(c).product())
-    .sum();
+  input.map((l) => Object.values(counts(parseLine(l))[0]).product()).sum();
