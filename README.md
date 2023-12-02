@@ -20,6 +20,10 @@ I'm going back and doing the 2015 year during the summer of 2022. I'm going to a
 
 December 2022 is upon us. You know the drill by now. JS as the main language, maybe some others sprinkled in here and there, and the annual [blog post](https://mkalvas.com/blog/aoc-2022).
 
+## [2023](https://adventofcode.com/2023)
+
+New year with another new group of people. I'm going to do it in JS as usual but I'm toying with the idea of doing a rust port at the end with [a specific time-based performance budget for all the solutions](https://www.reddit.com/r/adventofcode/search/?q=all+in+under) for the year [in rust](https://www.reddit.com/r/adventofcode/comments/kpndj9/2020_rust_happy_new_year_reddit_i_wrote_up_my/). I'm going to hold off on the blog posting for now since I'm so far behind on writing up previous years. I'll update here when I catch up and start writing these up.
+
 ## A note on `/lib` and the solution code
 
 Over the course of doing these puzzles, I've come up a standard library of helper functions. These are things that are either verbose or common enough to warrant a well defined and tested function.
