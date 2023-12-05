@@ -1,4 +1,4 @@
-# Other versions of `2022-12-14`
+# Other versions of 2022 day 14
 
 ## Naïve DFS
 

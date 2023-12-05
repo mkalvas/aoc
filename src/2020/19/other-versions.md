@@ -1,4 +1,4 @@
-# Other versions of day 2020 day 19
+# Other versions of 2020 day 19
 
 ## Attempt 1: Missing something
 

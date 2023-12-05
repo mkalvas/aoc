@@ -1,4 +1,4 @@
-# Other versions of `2022-12-16`
+# Other versions of 2022 day 16
 
 Not working, first pass idea. Can we get lucky and just assume we can always pick the next best neighbor and backtrack if we get stuck? Unfortunately no, we need to do something more thorough. The optimal total pressure path is a locally non-optimal path at many decision points. There's not a good way to make that decision, so we need to explore the state space fully, but hopefully we can reduce the state space that needs to be explored.
 
