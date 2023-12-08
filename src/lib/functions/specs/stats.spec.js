@@ -26,6 +26,24 @@ describe('isNum', () => {
   });
 });
 
+describe('quad', () => {
+  it('returns the quadratic formula solutions', () => {
+    // two real roots
+    expect(stats.quad(0.5, -(5 / 2), 2)).toEqual([1, 4]);
+    expect(stats.quad(1, -8, 5)).toEqual([
+      4 - Math.sqrt(11),
+      4 + Math.sqrt(11),
+    ]);
+
+    // one real root
+    expect(stats.quad(4, -12, 9)).toEqual([1.5]);
+
+    // for complex roots, we just remove them as solutions instead of returning
+    // [NaN, NaN]
+    expect(stats.quad(5, 20, 32)).toEqual([]);
+  });
+});
+
 describe('gcd', () => {
   it('finds the gcd of two numbers', () => {
     expect(stats.gcd(1, 2)).toBe(1);
