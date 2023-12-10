@@ -20,7 +20,11 @@ describe('aofl', () => {
   it('returns an array with given length and values', () => {
     expect(array.aofl(0)).toEqual([]);
     expect(array.aofl(2)).toEqual([undefined, undefined]);
-    expect(array.aofl(5, 'a')).toEqual(['a', 'a', 'a', 'a', 'a']);
+    expect(array.aofl(5, () => 'a')).toEqual(['a', 'a', 'a', 'a', 'a']);
+
+    let mut = array.aofl(2, () => []);
+    mut[0].push(1);
+    expect(mut).toEqual([[1], []]);
   });
 });
 

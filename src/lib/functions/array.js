@@ -30,7 +30,7 @@ export const isArr = (a) => Array.isArray(a);
 export const numSort = (a, b) => a - b;
 export const range = (a, b) =>
   Array.from({ length: b - a + 1 }).map((_, i) => a + i);
-export const aofl = (length, v = undefined) => Array.from({ length }).fill(v);
+export const aofl = (length, fn = () => {}) => Array.from({ length }, fn);
 
 // requires increasing ranges
 export const runion = ([s1, e1], [s2, e2]) => {
