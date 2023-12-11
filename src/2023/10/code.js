@@ -55,7 +55,6 @@ const findLoop = (lines) => {
     dir = nextDir(dx, dy);
     x += dx;
     y += dy;
-    ptsOnLoop[start.y][start.x] = true;
     ptsOnLoop[y][x] = true;
     steps++;
     path.push({ x, y });

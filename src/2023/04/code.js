@@ -17,7 +17,7 @@ export const solutionOne = (input) =>
 
 export const solutionTwo = (input) => {
   const scores = score(input).map((e) => e.count);
-  let copies = aofl(input.length, 1);
+  let copies = aofl(input.length, () => 1);
   for (const [i, score] of scores.entries()) {
     for (let j = 1; j < Math.min(input.length, score + 1); j++) {
       copies[i + j] += copies[i];
