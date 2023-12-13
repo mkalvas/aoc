@@ -10,6 +10,7 @@ export const count = (a, v) => a.count(v);
 export const counter = (a) => a.counter();
 export const cut = (a, i) => a.cut(i);
 export const desc = (a) => a.desc();
+export const diffCount = (a, b) => a.diffCount(b);
 export const diffs = (a) => a.diffs();
 export const groupEvery = (a, every) => a.groupEvery(every);
 export const nbrs = (a, y, x, diag, origin, oob, oobDefault) =>

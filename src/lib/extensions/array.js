@@ -52,6 +52,15 @@ Array.prototype.desc = function () {
   return this.sort((a, b) => b - a);
 };
 
+Array.prototype.diffCount = function (b) {
+  const larger = this.length >= b.length ? this.length : b.length;
+  let count = 0;
+  for (let i = 0; i < larger; i++) {
+    if (i >= this.length || i >= b.length || this[i] !== b[i]) count++;
+  }
+  return count;
+};
+
 Array.prototype.diffs = function () {
   return this.reduce(
     (acc, x, i) => (i - 1 < 0 ? [] : [...acc, x - this[i - 1]]),

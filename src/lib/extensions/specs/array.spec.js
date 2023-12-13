@@ -81,6 +81,15 @@ describe('desc', () => {
   });
 });
 
+describe('diffCount', () => {
+  it('returns the count of different entries in two arrays', () => {
+    expect([1].diffCount([1])).toEqual(0);
+    expect([1, 2].diffCount([1, 1])).toEqual(1);
+    expect([1].diffCount([1, 1])).toEqual(1);
+    expect([1, 1].diffCount([1])).toEqual(1);
+  });
+});
+
 describe('diffs', () => {
   it('finds the difference between consecutive pairs of numbers', () => {
     expect([1, 2, 4].diffs()).toEqual([1, 2]);
