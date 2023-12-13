@@ -161,6 +161,14 @@ Array.prototype.product = function () {
   return this.reduce((p, n) => p * n, 1);
 };
 
+Array.prototype.repeat = function (times) {
+  let out = [];
+  for (let i = 0; i < times; i++) {
+    out.push(this);
+  }
+  return out.flat();
+};
+
 Array.prototype.sum = function () {
   return this.reduce((s, n) => s + n, 0);
 };

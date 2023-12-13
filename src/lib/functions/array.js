@@ -16,6 +16,7 @@ export const nbrs = (a, y, x, diag, origin, oob, oobDefault) =>
   a.nbrs(y, x, diag, origin, oob, oobDefault);
 export const nums = (a) => a.nums();
 export const product = (a) => a.product();
+export const repeat = (a, times) => a.repeat(times);
 export const sum = (a) => a.sum();
 export const takeEvery = (a, every, offset) => a.takeEvery(every, offset);
 export const takeWhile = (a, fn) => a.takeWhile(fn);

@@ -223,6 +223,13 @@ describe('range', () => {
   });
 });
 
+describe('repeat', () => {
+  it('repeats the array flattened', () => {
+    expect(array.repeat([1], 5)).toEqual([1, 1, 1, 1, 1]);
+    expect(array.repeat([1, 2], 5)).toEqual([1, 2, 1, 2, 1, 2, 1, 2, 1, 2]);
+  });
+});
+
 describe('sum', () => {
   it('returns the sum of the array', () => {
     expect(array.sum([1, 2, 3])).toEqual(6);
