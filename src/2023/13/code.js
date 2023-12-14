@@ -17,14 +17,13 @@ const findReflection = (group, allowed) => {
   }
 };
 
-const solve = (input, allowed) => {
-  const mirrors = groupLines(input).map((g) => g.map(chars));
-  return mirrors.reduce((score, mirror) => {
+const solve = (input, allowed) =>
+  groupLines(input).reduce((score, group) => {
+    const mirror = group.map(chars);
     const rowsAbove = findReflection(mirror, allowed);
     if (rowsAbove) return score + 100 * rowsAbove;
     return score + findReflection(mirror.transpose(), allowed);
   }, 0);
-};
 
 export const solutionOne = (input) => solve(input, 0);
 export const solutionTwo = (input) => solve(input, 1);
