@@ -1,10 +1,10 @@
-import '../../lib/extensions';
+import { csv } from '../../lib';
 
 const parseLine = (line) => {
   const parts = line.split(':');
   return {
     id: +parts[0].split(' ')[1],
-    draws: parts[1].split(';').flatMap((s) => s.split(',')),
+    draws: parts[1].split(';').flatMap(csv),
   };
 };
 

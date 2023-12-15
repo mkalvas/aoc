@@ -1,6 +1,6 @@
-import { chars, ord } from '../../lib';
+import { chars, csv, ord } from '../../lib';
 
-const parse = (input, fn) => input.flatMap((l) => l.split(',').map(fn));
+const parse = (input, fn) => input.flatMap((l) => csv(l).map(fn));
 const hash = (s) => chars(s).reduce((h, c) => ((h + ord(c)) * 17) % 256, 0);
 
 export const solutionOne = (input) => parse(input, hash).sum();

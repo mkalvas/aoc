@@ -7,6 +7,15 @@ describe('chars', () => {
   });
 });
 
+describe('csv', () => {
+  it('returns an array of strings', () => {
+    expect(str.csv('')).toEqual(['']);
+    expect(str.csv('123')).toEqual(['123']);
+    expect(str.csv('1,23')).toEqual(['1', '23']);
+    expect(str.csv('1,2,3')).toEqual(['1', '2', '3']);
+  });
+});
+
 describe('b2d', () => {
   it('returns a decimal representation of a binary string', () => {
     expect(str.b2d('111')).toBe(7);

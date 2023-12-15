@@ -4,6 +4,7 @@ export const EMPT = ' ';
 export const HALF = '·';
 
 export const chars = (s) => s.split('');
+export const csv = (s) => s.split(',');
 
 export const b2d = (b) => parseInt(b, 2);
 export const d2b = (i) => i.toString(2);
