@@ -1,6 +1,6 @@
 import { BinaryHeap } from './binary-heap';
 
-const getHeap = () => new BinaryHeap((node) => node.f);
+const getHeap = () => new BinaryHeap((a, b) => a.f < b.f);
 
 const pathTo = (node) => {
   let curr = node;

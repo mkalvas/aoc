@@ -1,7 +1,7 @@
 export class BinaryHeap {
-  constructor(scoreFunction) {
+  constructor(compareFunction) {
     this.content = [];
-    this.scoreFunction = scoreFunction;
+    this.compareFunction = compareFunction;
   }
 
   size() {
@@ -46,7 +46,7 @@ export class BinaryHeap {
     while (n > 0) {
       const parentN = ((n + 1) >> 1) - 1;
       const parent = this.content[parentN];
-      if (this.scoreFunction(element) < this.scoreFunction(parent)) {
+      if (this.compareFunction(element, parent)) {
         this.content[parentN] = element;
         this.content[n] = parent;
         n = parentN;
@@ -59,27 +59,22 @@ export class BinaryHeap {
   bubbleUp(n) {
     const length = this.content.length;
     const element = this.content[n];
-    const elemScore = this.scoreFunction(element);
 
     while (true) {
+      let swap = null;
       const child2n = (n + 1) << 1;
       const child1n = child2n - 1;
-
-      let swap = null;
-      let child1Score;
+      const child1 = this.content[child1n];
 
       if (child1n < length) {
-        const child1 = this.content[child1n];
-        child1Score = this.scoreFunction(child1);
-        if (child1Score < elemScore) {
+        if (this.compareFunction(child1, element)) {
           swap = child1n;
         }
       }
 
       if (child2n < length) {
         const child2 = this.content[child2n];
-        const child2Score = this.scoreFunction(child2);
-        if (child2Score < (swap === null ? elemScore : child1Score)) {
+        if (this.compareFunction(child2, swap === null ? element : child1)) {
           swap = child2n;
         }
       }

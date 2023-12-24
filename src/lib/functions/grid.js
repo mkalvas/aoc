@@ -1,6 +1,6 @@
 // Two dimensional grid functions
-import { sum } from './array';
-import { EMPT } from './string';
+import { aofl, sum } from './array';
+import { EMPT, FULL, HALF } from './string';
 
 // idea:
 //  grid class that uses 1d array to store 2d since translating is easy
@@ -27,6 +27,10 @@ export const g2s = (grid, padding = 0, padChar = ' ') =>
     .map((row) => row.map((c) => String(c).padStart(padding, padChar)).join(''))
     .join('\n');
 
+export const inb = (grid, pt) => !oob(grid, pt);
+export const oob = (grid, pt) =>
+  pt[1] < 0 || pt[1] >= grid.length || pt[0] < 0 || pt[0] >= grid[0].length;
+
 export const sg2s = (grid) => {
   let w = 0;
   for (let y = 0; y < grid.length; y++) {
@@ -44,4 +48,20 @@ export const sg2s = (grid) => {
   }
 
   return out;
+};
+
+export const pts2gs = (pts, symbols) => {
+  let w = 0;
+  let h = 0;
+  for (const [x, y] of pts) {
+    if (x > w) w = x;
+    if (y > h) h = y;
+  }
+
+  let grid = aofl(h + 1, () => []).map((r) => aofl(w + 1, () => HALF));
+  for (const [x, y] of pts) {
+    grid[y][x] = symbols ? symbols[y][x] : FULL;
+  }
+
+  return g2s(grid);
 };

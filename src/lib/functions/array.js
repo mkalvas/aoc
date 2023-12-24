@@ -1,5 +1,13 @@
 import '../extensions/array';
 
+export const OBJ_DELTAS = { R: [1, 0], L: [-1, 0], U: [0, -1], D: [0, 1] };
+export const MH_DELTAS = [
+  [-1, 0],
+  [0, 1],
+  [1, 0],
+  [0, -1],
+];
+
 // delegated to prototype extensions
 export const accumulate = (a, fn) => a.accumulate(fn);
 export const asc = (a) => a.asc();
@@ -33,6 +41,22 @@ export const numSort = (a, b) => a - b;
 export const range = (a, b) =>
   Array.from({ length: b - a + 1 }).map((_, i) => a + i);
 export const aofl = (length, fn = () => {}) => Array.from({ length }, fn);
+
+export const pwSort = (a, b, sort = (x, y) => x - y) => {
+  if (a.length !== b.length) throw Error('arrays must be same length');
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) return sort(a[i], b[i]);
+  }
+  return 0;
+};
+
+export const pwCmp = (a, b, cmp = (x, y) => x < y) => {
+  if (a.length !== b.length) throw Error('arrays must be same length');
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) return cmp(a[i], b[i]);
+  }
+  return false;
+};
 
 // requires increasing ranges
 export const runion = ([s1, e1], [s2, e2]) => {
