@@ -111,3 +111,26 @@ export const rdiff = ([s1, e1], [s2, e2]) => {
   // |-|-2-|-|
   if (s2 <= s1 && e1 <= e2) return [];
 };
+
+// requires increasing ranges
+export const rintersect = ([s1, e1], [s2, e2]) => {
+  //    |-1-| |-2-| []
+  // or |-2-| |-1-|
+  if (e1 < s2 || e2 < s1) return [];
+
+  // |-1-|-|-| s2-e1
+  //     |-2-|
+  if (s1 <= s2 && e1 <= e2) return [[s2, e1]];
+
+  // |-|-1-|-| s2-e2
+  //   |-2-|
+  if (s1 <= s2 && e2 <= e1) return [[s2, e2]];
+
+  // |-|-|-1-| s1-e2
+  // |-2-|
+  if (s2 <= s1 && e2 <= e1) return [[s1, e2]];
+
+  //   |-1-|   s1-e1
+  // |-|-2-|-|
+  if (s2 <= s1 && e1 <= e2) return [[s1, e1]];
+};

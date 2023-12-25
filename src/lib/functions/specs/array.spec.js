@@ -368,3 +368,23 @@ describe('rdiff', () => {
     expect(array.rdiff([1, 5], [4, 5])).toEqual([[1, 3]]);
   });
 });
+
+describe('rintersect', () => {
+  it('combines ranges', () => {
+    expect(array.rintersect([0, 6], [1, 5])).toEqual([[1, 5]]);
+    expect(array.rintersect([1, 5], [3, 4])).toEqual([[3, 4]]);
+    expect(array.rintersect([0, 1], [2, 3])).toEqual([]);
+    expect(array.rintersect([2, 3], [0, 1])).toEqual([]);
+    expect(array.rintersect([0, 2], [2, 5])).toEqual([[2, 2]]);
+    expect(array.rintersect([0, 3], [2, 5])).toEqual([[2, 3]]);
+    expect(array.rintersect([0, 5], [2, 5])).toEqual([[2, 5]]);
+    expect(array.rintersect([1, 6], [1, 5])).toEqual([[1, 5]]);
+    expect(array.rintersect([2, 6], [1, 5])).toEqual([[2, 5]]);
+    expect(array.rintersect([5, 6], [1, 5])).toEqual([[5, 5]]);
+    expect(array.rintersect([1, 2], [1, 5])).toEqual([[1, 2]]);
+    expect(array.rintersect([3, 4], [1, 5])).toEqual([[3, 4]]);
+    expect(array.rintersect([4, 5], [1, 5])).toEqual([[4, 5]]);
+    expect(array.rintersect([1, 5], [1, 2])).toEqual([[1, 2]]);
+    expect(array.rintersect([1, 5], [4, 5])).toEqual([[4, 5]]);
+  });
+});
