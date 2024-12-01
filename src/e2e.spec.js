@@ -2,6 +2,8 @@ import days2015 from './2015';
 import days2020 from './2020';
 import days2021 from './2021';
 import days2022 from './2022';
+import days2023 from './2023';
+import days2024 from './2024';
 import { getFileLines } from './lib';
 
 const solutions = {
@@ -9,6 +11,8 @@ const solutions = {
   2020: days2020,
   2021: days2021,
   2022: days2022,
+  2023: days2023,
+  2024: days2024,
 };
 
 const blacklist = ['2015-4'];

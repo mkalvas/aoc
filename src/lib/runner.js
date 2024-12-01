@@ -6,6 +6,7 @@ import days2020 from '../2020';
 import days2021 from '../2021';
 import days2022 from '../2022';
 import days2023 from '../2023';
+import days2024 from '../2024';
 
 export const YEARS = {
   2015: days2015,
@@ -13,6 +14,7 @@ export const YEARS = {
   2021: days2021,
   2022: days2022,
   2023: days2023,
+  2024: days2024,
 };
 
 const TOP = `
