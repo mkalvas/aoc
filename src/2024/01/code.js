@@ -1,16 +1,9 @@
 import { counter } from '../../lib/functions/array';
 
-const parse = (input) =>
-  input
-    .map((l) => l.split('   ').nums())
-    .reduce(
-      (acc, g) => [
-        [...acc[0], g[0]],
-        [...acc[1], g[1]],
-      ],
-      [[], []]
-    )
-    .map((a) => a.asc());
+const parse = (input) => [
+  input.map((l) => +l.split('   ')[0]).asc(),
+  input.map((l) => +l.split('   ')[1]).asc(),
+];
 
 export const solutionOne = (input) => {
   const [a, b] = parse(input);
