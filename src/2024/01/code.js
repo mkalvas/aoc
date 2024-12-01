@@ -1,4 +1,3 @@
-import '../../lib/extensions';
 import { counter } from '../../lib/functions/array';
 
 const parse = (input) =>

@@ -41,7 +41,11 @@ Array.prototype.count = function (v) {
 };
 
 Array.prototype.counter = function () {
-  return this.reduce((c, v) => ({ ...c, [v]: (c[v] || 0) + 1 }), {});
+  let c = {};
+  for (let v of this) {
+    c[v] = (c[v] || 0) + 1;
+  }
+  return c;
 };
 
 Array.prototype.cut = function (i) {
