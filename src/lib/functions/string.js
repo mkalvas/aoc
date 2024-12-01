@@ -5,6 +5,7 @@ export const HALF = '·';
 
 export const chars = (s) => s.split('');
 export const csv = (s) => s.split(',');
+export const wssv = (s) => s.split(/\s+/);
 
 export const b2d = (b) => parseInt(b, 2);
 export const d2b = (i) => i.toString(2);
