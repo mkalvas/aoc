@@ -134,6 +134,13 @@ Array.prototype.min = function () {
   return Math.min(...this);
 };
 
+Array.prototype.monotonic = function (strict = false) {
+  const deltas = this.diffs();
+  const cmpInc = strict ? (d) => d > 0 : (d) => d >= 0;
+  const cmpDec = strict ? (d) => d < 0 : (d) => d <= 0;
+  return deltas.every(cmpInc) || deltas.every(cmpDec);
+};
+
 Array.prototype.nbrs = function (
   y,
   x,

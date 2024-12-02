@@ -21,6 +21,7 @@ export const desc = (a) => a.desc();
 export const diffCount = (a, b) => a.diffCount(b);
 export const diffs = (a) => a.diffs();
 export const groupEvery = (a, every) => a.groupEvery(every);
+export const monotonic = (a, strict) => a.monotonic(strict);
 export const nbrs = (a, y, x, diag, origin, oob, oobDefault) =>
   a.nbrs(y, x, diag, origin, oob, oobDefault);
 export const nums = (a) => a.nums();

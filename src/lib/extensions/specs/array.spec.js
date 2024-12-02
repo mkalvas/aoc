@@ -165,6 +165,32 @@ describe('min', () => {
   });
 });
 
+describe('monotonic', () => {
+  it('returns whether the array is monotonic (lax)', () => {
+    expect([].monotonic()).toBe(true);
+    expect([1].monotonic()).toBe(true);
+    expect([1, 1].monotonic()).toBe(true);
+    expect([1, 2, 3, 4].monotonic()).toBe(true);
+    expect([1, 2, 3, 3].monotonic()).toBe(true);
+    expect([4, 3, 2, 1].monotonic()).toBe(true);
+    expect([3, 3, 2, 1].monotonic()).toBe(true);
+    expect([3, 2, 3, 1].monotonic()).toBe(false);
+    expect([3, 4, 3, 1].monotonic()).toBe(false);
+  });
+
+  it('returns whether the array is monotonic (strict)', () => {
+    expect([].monotonic(true)).toBe(true);
+    expect([1].monotonic(true)).toBe(true);
+    expect([1, 1].monotonic(true)).toBe(false);
+    expect([1, 2, 3, 4].monotonic(true)).toBe(true);
+    expect([1, 2, 3, 3].monotonic(true)).toBe(false);
+    expect([4, 3, 2, 1].monotonic(true)).toBe(true);
+    expect([3, 3, 2, 1].monotonic(true)).toBe(false);
+    expect([3, 2, 3, 1].monotonic(true)).toBe(false);
+    expect([3, 4, 3, 1].monotonic(true)).toBe(false);
+  });
+});
+
 describe('nbrs', () => {
   const grid = [
     ['x', 'x', 'x', 'x', 'x'],
