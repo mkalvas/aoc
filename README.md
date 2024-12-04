@@ -24,6 +24,10 @@ December 2022 is upon us. You know the drill by now. JS as the main language, ma
 
 New year with another new group of people. I'm going to do it in JS as usual but I'm toying with the idea of doing a rust port at the end with [a specific time-based performance budget for all the solutions](https://www.reddit.com/r/adventofcode/search/?q=all+in+under) for the year [in rust](https://www.reddit.com/r/adventofcode/comments/kpndj9/2020_rust_happy_new_year_reddit_i_wrote_up_my/). I'm going to hold off on the blog posting for now since I'm so far behind on writing up previous years. I'll update here when I catch up and start writing these up.
 
+## [2024](https://adventofcode.com/2024)
+
+We're back again with primarily JS. I rewrote my whole website and the way all the posts and notes are hosted, so I'm in the process of transitioning all the write-ups to that. I'm also toying with the idea of making a nice TUI cli runner thing in Rust that would allow me to build/show/run these in multiple languages and do visualizations and stuff. Hopefully I'll have some time this year to work on these ideas.
+
 ## A note on `/lib` and the solution code
 
 Over the course of doing these puzzles, I've come up a standard library of helper functions. These are things that are either verbose or common enough to warrant a well defined and tested function.

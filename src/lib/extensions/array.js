@@ -177,6 +177,10 @@ Array.prototype.nums = function () {
   return this.map(Number);
 };
 
+Array.prototype.pluck = function (indexes = []) {
+  return this.filter((_, i) => indexes.includes(i));
+};
+
 Array.prototype.product = function () {
   return this.reduce((p, n) => p * n, 1);
 };

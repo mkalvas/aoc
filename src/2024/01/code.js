@@ -1,4 +1,4 @@
-import { counter, diffs } from '../../lib/functions/array';
+import { counter } from '../../lib/functions/array';
 
 const parse = (input) => [
   input.map((l) => +l.split('   ')[0]).asc(),

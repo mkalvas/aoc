@@ -246,8 +246,17 @@ describe('numSort', () => {
   });
 });
 
+describe('pluck', () => {
+  it('plucks the indexes from the array', () => {
+    expect(array.pluck([], [0])).toEqual([]);
+    expect(array.pluck([1, 2, 3], [1])).toEqual([2]);
+    expect(array.pluck([1, 2, 3], [4])).toEqual([]);
+  });
+});
+
 describe('product', () => {
   it('returns the product of the array', () => {
+    expect(array.product([])).toBe(1);
     expect(array.product([1, 2, 3])).toBe(6);
   });
 });

@@ -241,8 +241,17 @@ describe('nums', () => {
   });
 });
 
+describe('pluck', () => {
+  it('plucks the indexes from the array', () => {
+    expect([].pluck([0])).toEqual([]);
+    expect([1, 2, 3].pluck([1])).toEqual([2]);
+    expect([1, 2, 3].pluck([4])).toEqual([]);
+  });
+});
+
 describe('product', () => {
   it('returns the product of the array', () => {
+    expect([].product()).toBe(1);
     expect([1, 2, 3].product()).toBe(6);
   });
 });

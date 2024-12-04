@@ -1,4 +1,3 @@
-import '../../lib/extensions';
 import { diffs, wssv } from '../../lib';
 
 const parse = (report) => wssv(report).nums();
