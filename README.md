@@ -132,5 +132,20 @@ I occasionally write solutions in other languages for fun. Here are some quick w
 ## Roadmap
 
 - [ ] Build a better CLI probably using rust
-- [ ] Build a better Rust specific runnner
+- [ ] Build a better Rust specific runner
 - [ ] Build a better Haskell specific runner
+
+Probably the goal is a top level TUI with folders per language so I can use their tools/project setup. Something like
+
+```txt
+┌ cli
+└ langs
+  ├ elixir
+  ├ gleam
+  ├ haskell
+  ├ js
+  ├ lox
+  └ rust
+```
+
+This would also give me the opportunity to make CLIs in each of these languages that the TUI would call out to.
