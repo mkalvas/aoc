@@ -1,11 +1,14 @@
 import '../extensions/array';
 
 export const OBJ_DELTAS = { R: [1, 0], L: [-1, 0], U: [0, -1], D: [0, 1] };
+
+//         clockwise via (dir + 1) % 4
+// counter-clockwise via (dir - 1) % 4
 export const MH_DELTAS = [
-  [-1, 0],
-  [0, 1],
-  [1, 0],
-  [0, -1],
+  [0, -1], // up
+  [1, 0], // right
+  [0, 1], // down
+  [-1, 0], // left
 ];
 
 // delegated to prototype extensions
