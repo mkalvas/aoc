@@ -1,7 +1,7 @@
-import { MH_DELTAS, pwCmp, inb, BinaryHeap, s2p } from "../../lib";
+import { MH_DELTAS, pwCmp, inb, BinaryHeap, s2p } from '../../lib';
 
 const solve = (input, maxRun, minRun) => {
-  const grid = input.map((l) => l.split("").nums());
+  const grid = input.map((l) => l.split('').nums());
   let heap = new BinaryHeap(pwCmp);
   heap.push([0, 0, 0, -1, -1]);
   let seen = new Map();
@@ -21,7 +21,7 @@ const solve = (input, maxRun, minRun) => {
       if (nrun > maxRun) continue;
       if (minRun && ndir !== dir && run < minRun && run !== -1) continue;
 
-      if (inb(grid, [nx, ny])) {
+      if (inb(grid, nx, ny)) {
         heap.push([cost + grid[ny][nx], ny, nx, ndir, nrun]);
       }
     }

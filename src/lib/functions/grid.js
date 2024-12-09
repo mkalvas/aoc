@@ -27,9 +27,9 @@ export const g2s = (grid, padding = 0, padChar = ' ') =>
     .map((row) => row.map((c) => String(c).padStart(padding, padChar)).join(''))
     .join('\n');
 
-export const inb = (grid, pt) => !oob(grid, pt);
-export const oob = (grid, pt) =>
-  pt[1] < 0 || pt[1] >= grid.length || pt[0] < 0 || pt[0] >= grid[0].length;
+export const inb = (grid, x, y) => !oob(grid, x, y);
+export const oob = (grid, x, y) =>
+  y < 0 || y >= grid.length || x < 0 || x >= grid[y].length;
 
 export const sg2s = (grid) => {
   let w = 0;
