@@ -14,6 +14,7 @@ export const MH_DELTAS = [
 // delegated to prototype extensions
 export const accumulate = (a, fn) => a.accumulate(fn);
 export const asc = (a) => a.asc();
+export const cartesian = (a) => a.cartesian();
 export const clone = (a) => a.clone();
 export const combinations = (a) => a.combinations();
 export const cons = (a, size) => a.cons(size);
@@ -24,6 +25,7 @@ export const desc = (a) => a.desc();
 export const diffCount = (a, b) => a.diffCount(b);
 export const diffs = (a) => a.diffs();
 export const groupEvery = (a, every) => a.groupEvery(every);
+export const insert = (a, v, i) => a.insert(v, i);
 export const monotonic = (a, strict) => a.monotonic(strict);
 export const nbrs = (a, y, x, diag, origin, oob, oobDefault) =>
   a.nbrs(y, x, diag, origin, oob, oobDefault);

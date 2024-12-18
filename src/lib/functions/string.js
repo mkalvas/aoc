@@ -13,6 +13,7 @@ export const d2b = (i) => i.toString(2);
 export const h2d = (h) => parseInt(h, 16);
 export const d2h = (i) => i.toString(16);
 
+export const sk = (...args) => args.join(',');
 export const p2s = (a) => a.map((x) => `${x}`).join(',');
 export const s2p = (s) => s.split(',').map(Number);
 

@@ -22,6 +22,83 @@ describe('asc', () => {
   });
 });
 
+describe('cartesian', () => {
+  // each array is the spot in the output and its values are the possibilities
+  it('returns the cartesian product of the array of arrays', () => {
+    expect([[1, 2]].cartesian()).toEqual([1, 2]);
+    expect([[1], []].cartesian()).toEqual([]);
+    expect([[1], [2]].cartesian()).toEqual([[1, 2]]);
+    expect([[1], [2, 3], []].cartesian()).toEqual([]);
+    expect([[1], [2, 3]].cartesian()).toEqual([
+      [1, 2],
+      [1, 3],
+    ]);
+
+    expect(
+      [
+        [1, 1],
+        [2, 3],
+      ].cartesian()
+    ).toEqual([
+      [1, 2],
+      [1, 3],
+      [1, 2],
+      [1, 3],
+    ]);
+
+    expect(
+      [
+        [1, 2],
+        [3, 4],
+      ].cartesian()
+    ).toEqual([
+      [1, 3],
+      [1, 4],
+      [2, 3],
+      [2, 4],
+    ]);
+
+    expect(
+      [
+        [1, 2, 3],
+        ['a', 'b'],
+        [4, 5],
+      ].cartesian()
+    ).toEqual([
+      [1, 'a', 4],
+      [1, 'a', 5],
+      [1, 'b', 4],
+      [1, 'b', 5],
+      [2, 'a', 4],
+      [2, 'a', 5],
+      [2, 'b', 4],
+      [2, 'b', 5],
+      [3, 'a', 4],
+      [3, 'a', 5],
+      [3, 'b', 4],
+      [3, 'b', 5],
+    ]);
+
+    expect(
+      [
+        [1, 2],
+        [1, 2],
+        [1, 2],
+      ].cartesian()
+    ).toEqual([
+      [1, 1, 1],
+      [1, 1, 2],
+      [1, 2, 1],
+      [1, 2, 2],
+      [2, 1, 1],
+      [2, 1, 2],
+      [2, 2, 1],
+      [2, 2, 2],
+    ]);
+    expect(true).toBe(true);
+  });
+});
+
 describe('clone', () => {
   it('clones without reference', () => {
     let a = [1, 2, 3];
@@ -126,6 +203,22 @@ describe('id', () => {
   it('generates an md5 hash of the string of the array', () => {
     // independently generated for verification with [1,2].toString() = '1,2'
     expect([1, 2].id()).toBe('05cf281c050be3da4eecf3bc6e8aac1b');
+  });
+});
+
+describe('insert', () => {
+  it('inserts a value at the index', () => {
+    expect([1, 2, 3].insert('a', 0)).toEqual(['a', 1, 2, 3]);
+    expect([1, 2, 3].insert('a', 1)).toEqual([1, 'a', 2, 3]);
+    expect([1, 2, 3].insert('a', 2)).toEqual([1, 2, 'a', 3]);
+    expect([1, 2, 3].insert('a', 3)).toEqual([1, 2, 3, 'a']);
+    expect([1, 2, 3].insert('a', 4)).toEqual([1, 2, 3, 'a']);
+    expect([1, 2, 3].insert('a', -1)).toEqual([1, 2, 'a', 3]);
+
+    expect([].insert('a', 0)).toEqual(['a']);
+    expect([].insert('a', 1)).toEqual(['a']);
+    expect([].insert('a', 2)).toEqual(['a']);
+    expect([].insert('a', -1)).toEqual(['a']);
   });
 });
 

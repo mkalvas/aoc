@@ -150,6 +150,22 @@ describe('id', () => {
   });
 });
 
+describe('insert', () => {
+  it('inserts a value at the index', () => {
+    expect(array.insert([1, 2, 3], 'a', 0)).toEqual(['a', 1, 2, 3]);
+    expect(array.insert([1, 2, 3], 'a', 1)).toEqual([1, 'a', 2, 3]);
+    expect(array.insert([1, 2, 3], 'a', 2)).toEqual([1, 2, 'a', 3]);
+    expect(array.insert([1, 2, 3], 'a', 3)).toEqual([1, 2, 3, 'a']);
+    expect(array.insert([1, 2, 3], 'a', 4)).toEqual([1, 2, 3, 'a']);
+    expect(array.insert([1, 2, 3], 'a', -1)).toEqual([1, 2, 'a', 3]);
+
+    expect(array.insert([], 'a', 0)).toEqual(['a']);
+    expect(array.insert([], 'a', 1)).toEqual(['a']);
+    expect(array.insert([], 'a', 2)).toEqual(['a']);
+    expect(array.insert([], 'a', -1)).toEqual(['a']);
+  });
+});
+
 describe('monotonic', () => {
   it('returns whether the array is monotonic (lax)', () => {
     expect(array.monotonic([])).toBe(true);
@@ -271,6 +287,11 @@ describe('repeat', () => {
   it('repeats the array flattened', () => {
     expect(array.repeat([1], 5)).toEqual([1, 1, 1, 1, 1]);
     expect(array.repeat([1, 2], 5)).toEqual([1, 2, 1, 2, 1, 2, 1, 2, 1, 2]);
+    expect(array.repeat([[1, 2]], 3)).toEqual([
+      [1, 2],
+      [1, 2],
+      [1, 2],
+    ]);
   });
 });
 

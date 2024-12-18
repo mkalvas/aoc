@@ -17,6 +17,14 @@ Array.prototype.asc = function () {
   return this.sort((a, b) => a - b);
 };
 
+const combine = (a, b) =>
+  [].concat(...a.map((d) => b.map((e) => [].concat(d, e))));
+const cart = (a, b, ...c) => (b ? cart(combine(a, b), ...c) : a);
+
+Array.prototype.cartesian = function () {
+  return cart(...this);
+};
+
 Array.prototype.clone = function () {
   // structuredClone doesn't walk the prototype chain,
   // so we need to copy it over
@@ -111,6 +119,11 @@ Array.prototype.id = function () {
   return md5(this.toString());
 };
 
+Array.prototype.insert = function (v, i) {
+  this.splice(i, 0, v);
+  return this;
+};
+
 Array.prototype.lcm = function () {
   return this.reduce(_lcm);
 };
@@ -177,7 +190,7 @@ Array.prototype.nums = function () {
   return this.map(Number);
 };
 
-Array.prototype.pluck = function (indexes = []) {
+Array.prototype.pluck = function (indexes) {
   return this.filter((_, i) => indexes.includes(i));
 };
 
