@@ -28,6 +28,10 @@ New year with another new group of people. I'm going to do it in JS as usual but
 
 We're back again with primarily JS. I rewrote my whole website and the way all the posts and notes are hosted, so I'm in the process of transitioning all the write-ups to that. I'm also toying with the idea of making a nice TUI cli runner thing in Rust that would allow me to build/show/run these in multiple languages and do visualizations and stuff. Hopefully I'll have some time this year to work on these ideas.
 
+## [2025](https://adventofcode.com/2025)
+
+We're back at it for the new 12 day format. Embarassingly enough, I haven't fully finished sorting out my previous advent of code posts from last year's update above. Rest assured, this repo still has all the current work on them, I'm just missing a bunch of the write-ups that accompany them on my site. I'd like to get that sorted out this year and hopefully the relaxed schedule means more time for tinkering.
+
 ## A note on `/lib` and the solution code
 
 Over the course of doing these puzzles, I've come up a standard library of helper functions. These are things that are either verbose or common enough to warrant a well defined and tested function.
