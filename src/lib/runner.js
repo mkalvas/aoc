@@ -1,12 +1,13 @@
 import { execSync } from 'child_process';
 import { performance } from 'perf_hooks';
-import { getFileLines } from './functions';
 import days2015 from '../2015';
 import days2020 from '../2020';
 import days2021 from '../2021';
 import days2022 from '../2022';
 import days2023 from '../2023';
 import days2024 from '../2024';
+import days2025 from '../2025';
+import { getFileLines } from './functions';
 
 export const YEARS = {
   2015: days2015,
@@ -15,6 +16,7 @@ export const YEARS = {
   2022: days2022,
   2023: days2023,
   2024: days2024,
+  2025: days2025,
 };
 
 const TOP = `
